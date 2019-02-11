@@ -26,6 +26,14 @@ $('#homelink').on('click', () => {
     toggleMenu();
 });
 
+$(window).scroll(() => {
+    if($(this).scrollTop() > 200){
+        $('#scroll').fadeOut();
+    } else {
+        $('#scroll').fadeIn();
+    }
+}); 
+
 var swiper = new Swiper('.blog-slider', {
     spaceBetween: 30,
     effect: 'fade',
@@ -38,3 +46,13 @@ var swiper = new Swiper('.blog-slider', {
         clickable: true,
     }
 });
+
+// Calling Behance API
+
+var apiKey = "8oZRxtP5VMo5D37II1xVHcHWnn5ERCt0";
+var userId = "korneas";
+
+() => {
+    var behanceUserAPI = 'http://www.behance.net/v2/users/' + userId + '/callback=?api_key=' + apiKey;
+    
+}
