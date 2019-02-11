@@ -246,11 +246,21 @@ a:hover {
     margin: 20px 0;
     text-align: center;
     cursor: pointer;
+    text-shadow: 0 0 0 #fff0dc;
+    transition: all 0.2s ease-in-out;
 }
 
 #menu_options li:hover {
-    text-decoration: line-through;
-    text-decoration-color: #232323;
+    text-shadow: 0.01em 0.01em 0 #232323,
+        0.02em 0.02em 0 #232323,
+        0.03em 0.03em 0 #232323,
+        0.04em 0.04em 0 #232323,
+        0.05em 0.05em 0 #232323,
+        0.06em 0.06em 0 #232323,
+        0.07em 0.07em 0 #232323,
+        0.08em 0.08em 0 #232323,
+        0.09em 0.09em 0 #232323,
+        .1em .1em 0 #232323;
 }
 
 #content {
