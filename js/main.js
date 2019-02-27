@@ -2,7 +2,17 @@
 
 $('#menu').hide();
 
-function toggleMenu(){
+var preloadTimer = setTimeout(() => {
+    $('#k_awaken').attr("src","img/k_awake.svg");
+    $('#loader-text').text("READY!");
+    
+}, 3000);
+
+$(window).on('load', () => {
+    $('#preloader').hide();
+});
+
+function toggleMenu() {
     $('.menuicon').toggleClass("on");
     $('.fillBlue').toggleClass("on");
     $('.fillBlack').toggleClass("on");
@@ -18,33 +28,28 @@ function toggleMenu(){
     }, 200);
 }
 
+// Open menu
 $('#deploy').on('click', () => {
     toggleMenu();
 });
 
+// Logo working as home
+$('#logo').on('click', () => {
+    window.location = "#";
+});
+
+// Menu links actions
 $('#homelink').on('click', () => {
     toggleMenu();
 });
-
-$(window).scroll(() => {
-    if($(this).scrollTop() > 200){
-        $('#scroll').fadeOut();
-    } else {
-        $('#scroll').fadeIn();
-    }
-}); 
-
-var swiper = new Swiper('.blog-slider', {
-    spaceBetween: 30,
-    effect: 'fade',
-    loop: true,
-    mousewheel: {
-        inverted: true,
-    },
-    pagination: {
-        el: '.blog-slider_pager',
-        clickable: true,
-    }
+$('#projectslink').on('click', () => {
+    toggleMenu();
+});
+$('#aboutlink').on('click', () => {
+    toggleMenu();
+});
+$('#contactlink').on('click', () => {
+    toggleMenu();
 });
 
 // Calling Behance API
@@ -54,5 +59,5 @@ var userId = "korneas";
 
 () => {
     var behanceUserAPI = 'http://www.behance.net/v2/users/' + userId + '/callback=?api_key=' + apiKey;
-    
+
 }

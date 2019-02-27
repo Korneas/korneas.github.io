@@ -7,7 +7,7 @@
 
 */
 
-@import url('https://fonts.googleapis.com/css?family=Barlow:400,700,700i,900');
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Archivo');
 
 * {
@@ -42,7 +42,92 @@ body::-webkit-scrollbar {
 #main {
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
+}
+
+#preloader {
+    width: 100%;
+    height: 100vh;
+    background-color: #232323;
+    position: fixed;
+    z-index: 100;
+    user-select: none;
+    clip: rect(0, auto, auto, 0);
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1) ;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+}
+
+@keyframes loading {
+    0% {
+        clip: rect(0, 1200px, auto, 0);
+    }
+
+    100% {
+        clip: rect(0, 0px, auto, 0);
+    }
+}
+
+#preloader h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15em;
+    font-weight: 900;
+    color: #303030;
+    margin: 0;
+}
+
+#preloader #loader {
+    position: absolute;
+    width: 230px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#preloader #loader-shadow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    display: flex;
+    align-items: center;
+}
+
+#preloader #loader-shadow svg {
+    animation: k_shadow 5s ease-in-out infinite;
+}
+
+.fillClearGray {
+    fill: #101010;
+}
+
+@keyframes k_shadow {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.7);
+    }
+}
+
+#preloader #loader #k_awaken {
+    animation: k_floating 5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes k_floating {
+
+    0%, 100% {
+        transform: translateY(30px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
 }
 
 a:active,
@@ -57,6 +142,11 @@ a,
 a:focus,
 a:hover {
     text-decoration: none;
+}
+
+.fillWhite {
+    fill: #fff0dc;
+    transition: all 0.2s ease-in-out;
 }
 
 .fillBlue {
@@ -77,7 +167,7 @@ a:hover {
 #navigation {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 10;
     pointer-events: none;
 }
@@ -92,6 +182,7 @@ a:hover {
     height: auto;
     left: 40px;
     top: 40px;
+    cursor: pointer;
 }
 
 #social {
@@ -212,7 +303,7 @@ a:hover {
     position: fixed;
     display: block;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #003cf0;
     transition: all 0.2s ease-in-out;
     z-index: 5;
@@ -248,6 +339,11 @@ a:hover {
     cursor: pointer;
     text-shadow: 0 0 0 #fff0dc;
     transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+#menu_options a {
+    color: #fff0dc;
 }
 
 #menu_options li:hover {
@@ -263,214 +359,129 @@ a:hover {
         .1em .1em 0 #232323;
 }
 
-#content {
+#container {
     position: absolute;
-    width: 75%;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: absolute;
+    width: 80%;
+    height: 100%;
     left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#init {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    text-align: left;
-}
-
-#k_me {
-    width: 300px;
-    height: 450px;
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-    display: inline-block;
-    background-image: url("../img/k_ill.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.init-textbox {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateX(-50%);
 }
 
 #init h1 {
-    font-size: 6em;
+    font-size: 4.8em;
     font-weight: 900;
     color: #003cf0;
     margin: 0;
     line-height: 90px;
 }
 
-#init p {
-    width: 600px;
-    /* margin: 0 auto; */
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-family: 'Archivo', 'sans-serif';
-}
-
-#init #scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 5%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 45px;
-    border: 3px solid #003cf0;
-    border-radius: 50px;
-}
-
-#init #scroll::before{
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3px;
-    height: 10px;
-    background-color: #003cf0;
-    animation: scrollDown 1.5s infinite;
-}
-
-@keyframes scrollDown {
-    0% {
-        opacity: 0;
-        transform: translate(-50, 0%);
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    100%{
-        opacity: 0;
-        transform: translate(-50%, 15px);
-    }
-}
-
-#aboutme {
-    position: relative;
-    height: 100vh;
-}
-
-.innercontent {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.innercontent h1 {
-    font-size: 3em;
-    font-weight: 900;
-    width: 100%;
-    color: #003cf0;
-    text-align: center;
-}
-
-.innercontent #biobanner {
-    width: 100%;
-    height: 220px;
-    background-image: url("../img/photobanner.png");
-    background-size: inherit;
-    background-position: center;
-    background-color: #003cf0;
-}
-
-.innercontent ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.innercontent li {
-    display: table-row;
-    width: 100%;
-}
-
-.innercontent p {
-    display: table-cell;
-    font-family: 'Archivo', 'sans-serif';
-    font-size: 1.2em;
-    padding: 45px 30px 30px 40px;
-    vertical-align: top;
-    width: 33%;
-}
-
-.innercontent p span {
-    color: #003cf0;
-}
-
-#homeprojects {
-    position: relative;
-    height: 100vh;
-}
-
-#contact {
-    position: relative;
-    height: 90vh;
-}
-
-#contact-form {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#contact .form-field {
-    padding: 15px;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 2px solid #232323;
-    width: 40%;
-    margin: 20px 4.85%;
-    height: 50px;
-    font-family: 'Archivo', 'sans-serif';
-}
-
-#contact .form-field:nth-child(4) {
-    width: 90%;
-    height: 150px;
-    border: 2px solid #232323;
-}
-
-#contact .form-field::placeholder {
-    color: #232323;
-    opacity: .6;
-    font-style: italic;
-}
-
-#contact .submit {
-    height: 50px;
-    margin: 10px 4.85%;
-    width: 90%;
-    border: none;
-    background-color: #232323;
+#init h1 span {
     color: #fff0dc;
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: #003cf0;
+}
+
+#init p {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 1.4em;
     font-family: 'Archivo', 'sans-serif';
-    font-size: 1.2em;
-    font-weight: bold;
 }
 
-#contact .submit:hover {
-    background-color: #003cf0;
+#init #initTitle {
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-footer {
+.content p::selection,
+.content h1::selection,
+.content h3::selection,
+.content li::selection,
+.content sup::selection,
+.content span::selection {
+    color: #fff;
+    background: #003cf0;
+}
+
+#content br::selection {
+    background: #00000000;
+}
+
+.titles {
+    user-select: none;
+    font-size: 3.5em;
+    font-weight: 900;
+    color: #003cf0;
+    margin: 0;
+}
+
+#project-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    z-index: 2;
+}
+
+#project-tag-list {
+    font-family: 'Archivo', 'sans-serif';
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0 0 0 20px;
+    margin-top: 10px;
+}
+
+#project-tag-list li {
+    margin-top: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+#project-tag-list li:nth-child(1) {
+    margin-top: 0
+}
+
+#project-list {
     position: relative;
-    width: 100%;
-    margin-bottom: 40px;
-    font-family: 'Archivo', 'sans-serif';
-    text-align: center;
+}
+
+.project {
+    background: #000;
+    margin: 20px 0px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .project {
+        width: 300px;
+        height: 160px;
+    }
 }

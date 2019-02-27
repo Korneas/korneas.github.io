@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="K_Portfolio">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Korneas | Product Designer</title>
     <link rel="stylesheet" href="style/normalize.css">
@@ -14,12 +14,23 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <h2 id="loader-text">LOADING</h2>
+        <div id="loader-shadow">
+            <svg width="180" height="40">
+                <ellipse cx="90" cy="20" rx="90" ry="20" alignment-baseline="middle" class="fillClearGray" />
+            </svg>
+        </div>
+        <div id="loader">
+            <img src="img/K_rest.svg" alt="Korneas Loader" id="k_awaken">
+        </div>
+    </div>
     <div id="main">
-        <div id="preloader"></div>
         <nav id="navigation">
             <div id="logo">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px" y="0px" viewBox="0 0 54 45" style="enable-background:new 0 0 54 45;" xml:space="preserve">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54 45"
+                    style="enable-background:new 0 0 54 45;" xml:space="preserve">
                     <g>
                         <rect x="0" class="fillBlue" width="9" height="18" />
                         <rect x="18" class="fillBlack" width="9" height="45" />
@@ -35,10 +46,14 @@
                 <span class="menuicon"></span>
             </div>
             <div id="social">
-                <a id="github" class="main_icon" target="_blank" rel="noopener noreferrer" href="https://github.com/Korneas"></a>
-                <a id="linkedin" class="main_icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/camilo-jose-montoya-24aa1615b/"></a>
-                <a id="behance" class="main_icon" target="_blank" rel="noopener noreferrer" href="https://www.behance.net/Korneas"></a>
-                <a id="instagram" class="main_icon" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/korneas/"></a>
+                <a id="github" class="main_icon" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/Korneas"></a>
+                <a id="linkedin" class="main_icon" target="_blank" rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/camilo-jose-montoya-24aa1615b/"></a>
+                <a id="behance" class="main_icon" target="_blank" rel="noopener noreferrer"
+                    href="https://www.behance.net/Korneas"></a>
+                <a id="instagram" class="main_icon" target="_blank" rel="noopener noreferrer"
+                    href="https://www.instagram.com/korneas/"></a>
             </div>
             <div id="mail">
                 <a href="mailto:korneas@outlook.com?subject=Hi Camilo 👋">Get in touch.</a>
@@ -47,172 +62,20 @@
         <div id="menu" class="hidden">
             <div id="menu_options">
                 <ul>
-                    <li id="homelink">HOME</li>
-                    <li id="aboutlink">ABOUT</li>
-                    <li id="projectslink">PROJECTS</li>
-                    <li id="contactlink">CONTACT</li>
+                    <li id="homelink"><a href="#">HOME</a></li>
+                    <li id="projectslink"><a href="#/projects">PROJECTS</a></li>
+                    <li id="aboutlink"><a href="#/about">ABOUT</a></li>
+                    <li id="contactlink"><a href="#/contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
-        <div id="content">
-            <div id="init">
-                <div class="init-textbox">
-                    <div id="k_me"></div>
-                    <h1>Hello! I'm <br> Camilo Montoya</h1>
-                    <p>A designer that crafts digital experiences step by step, from idea to a final product for
-                        thoughfull clients</p>
-                </div>
-                <span id="scroll"></span>
-            </div>
-            <div id="aboutme">
-                <div class="innercontent">
-                    <h1>BIO & EXPERIENCE</h1>
-                    <div id="biobanner"></div>
-                    <ul>
-                        <li>
-                            <p>I'm a digital focused <span>Product Designer</span>, with a background in graphic
-                                design. Also an actual student of <span>Interactive Media Design</span> in Icesi
-                                University in Cali, Colombia.
-                                <br><br>When I'm not designing interfaces, planning a UX or working in VS Code, you can
-                                find me drawing, playing Pokemon or listening to lo-fi music albums.</p>
-                            <p><span>Skills:</span>
-                            </p>
-                            <p><span>Competences:</span>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div id="homeprojects">
-                <div class="innercontent">
-                    <h1>PROJECTS</h1>
-                    <div class="blog-slider">
-                        <div class="blog-slider_wrp swiper-wrapper">
-                            <div class="blog-slider_item swiper-slide">
-                                <div class="blog-slider_img">
-                                    <img src="img/Desert.jpg" alt="test">
-                                </div>
-                                <div class="blog-slider_content">
-                                    <span class="blog-slider_date">November 2018</span>
-                                    <div class="blog-slider_title">
-                                        <h2>Social Wave</h2>
-                                    </div>
-                                    <div class="blog-slider_description">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis expedita
-                                            earum atque, nam nostrum fuga labore possimus magni, debitis consequuntur
-                                            voluptatem officia in eaque natus quisquam quidem, quos id!
-                                            Soluta?Perferendis enim velit corrupti tempora. Reprehenderit explicabo
-                                            culpa.
-                                            <br><br>
-                                            #UX, #UI, #Prototype</p>
-                                    </div>
-                                    <a href="#" class="blog-slider_btn">VIEW PROJECT</a>
-                                </div>
-                            </div>
-                            <div class="blog-slider_item swiper-slide">
-                                <div class="blog-slider_img">
-                                    <img>
-                                </div>
-                                <div class="blog-slider_content">
-                                    <span class="blog-slider_date">Fecha</span>
-                                    <div class="blog-slider_title">
-                                        <h2>
-                                            Napole
-                                        </h2>
-                                    </div>
-                                    <div class="blog-slider_description">
-                                        <p>Descripcion</p>
-                                    </div>
-                                    <a href="#" class="blog-slider_btn">VIEW PROJECT</a>
-                                </div>
-                            </div>
-                            <div class="blog-slider_item swiper-slide">
-                                <div class="blog-slider_img">
-                                    <img>
-                                </div>
-                                <div class="blog-slider_content">
-                                    <span class="blog-slider_date">Fecha</span>
-                                    <div class="blog-slider_title">
-                                        <h2>Lifekeeper</h2>
-                                    </div>
-                                    <div class="blog-slider_description">
-                                        <p>Descripcion</p>
-                                    </div>
-                                    <a href="#" class="blog-slider_btn">VIEW PROJECT</a>
-                                </div>
-                            </div>
-                            <div class="blog-slider_item swiper-slide">
-                                <div class="blog-slider_img">
-                                    <img>
-                                </div>
-                                <div class="blog-slider_content">
-                                    <span class="blog-slider_date">Fecha</span>
-                                    <div class="blog-slider_title">
-                                        <h2>DMI Webpage</h2>
-                                    </div>
-                                    <div class="blog-slider_description">
-                                        <p>Descripcion</p>
-                                    </div>
-                                    <a href="#" class="blog-slider_btn">VIEW PROJECT</a>
-                                </div>
-                            </div>
-                            <div class="blog-slider_item swiper-slide">
-                                <div class="blog-slider_img">
-                                    <img>
-                                </div>
-                                <div class="blog-slider_content">
-                                    <span class="blog-slider_date">Fecha</span>
-                                    <div class="blog-slider_title">
-                                        <h2>TREK</h2>
-                                    </div>
-                                    <div class="blog-slider_description">
-                                        <p>Descripcion</p>
-                                    </div>
-                                    <a href="#" class="blog-slider_btn">VIEW PROJECT</a>
-                                </div>
-                            </div>
-                            <div class="blog-slider_item swiper-slide">
-                                <div class="blog-slider_img">
-                                    <img>
-                                </div>
-                                <div class="blog-slider_content">
-                                    <span class="blog-slider_date">Fecha</span>
-                                    <div class="blog-slider_title">
-                                        <h2>The Shinning</h2>
-                                    </div>
-                                    <div class="blog-slider_description">
-                                        <p>Descripcion</p>
-                                    </div>
-                                    <a href="#" class="blog-slider_btn">VIEW PROJECT</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-slider_pager"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="contact">
-                <div class="innercontent">
-                    <h1>CONTACT ME</h1>
-                    <div id="contact-form">
-                        <form action="">
-                            <input type="text" class="form-field" name="name" placeholder="Name">
-                            <input type="email" class="form-field" name="mail" placeholder="E-mail"><br>
-                            <textarea type="text" class="form-field" rows="10" cols="30" name="message" placeholder="Write your message" style="resize: none;"></textarea><br>
-                            <input type="submit" value="SEND MESSAGE" class="submit">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <footer>
-                <i><b>Feelings that matter</b></i><br>
-                Copyright © 2018 Korneas. All rights reserved.
-            </footer>
-        </div>
+        <div id="container" ng-view></div>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
     <script src="js/main.js" type="application/javascript"></script>
+    <script src="js/controller.js" type="application/javascript"></script>
 </body>
 
 </html>
