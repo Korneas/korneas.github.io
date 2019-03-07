@@ -456,6 +456,7 @@ a:hover {
 .project {
     background: #000;
     margin: 20px 0px;
+    perspective: 40px;
 }
 
 /* Extra small devices (phones, 600px and down) */
