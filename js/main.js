@@ -5,14 +5,19 @@
 
 $('#menu').hide();
 
-var preloadTimer = setTimeout(() => {
-    $('#k_awaken').attr("src", "img/k_awake.svg");
-    $('#loader-text').text("READY!");
-
-}, 3000);
+// setInterval(() => {
+//     console.log(window.innerWidth);
+// }, 100);
 
 $(window).on('load', () => {
+    $('#k_awaken').attr("src", "img/k_awake.svg");
+    $('#loader-text').text("READY!");
     $('#preloader').hide();
+    setTimeout(() => {
+        $('#preloader').fadeOut(1000, () => {
+
+        });
+    }, 500);
 });
 
 function toggleMenu() {
@@ -57,6 +62,7 @@ $('#contactlink').on('click', () => {
 
 //          PROJECT
 
+/*
 var counter = 0;
 var updateRate = 10;
 var timeUpdate = function () {
@@ -98,10 +104,12 @@ var mouse = {
         this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
         this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
     },
-    show: function (e) { return '(' + this.x + ', ' + this.y + ')'; }
+    show: function (e) {
+        return '(' + this.x + ', ' + this.y + ')';
+    }
 }
 
-mouse.setOrigin(container);
+//mouse.setOrigin(container);
 
 var update = function (event) {
     mouse.updatePosition(event);
@@ -119,6 +127,7 @@ var updateTransformStyle = function (x, y) {
     inner.style.msTransform = style;
     inner.style.oTransform = style;
 }
+*/
 
 // Calling Behance API
 
@@ -127,5 +136,4 @@ var userId = "korneas";
 
 () => {
     var behanceUserAPI = 'http://www.behance.net/v2/users/' + userId + '/callback=?api_key=' + apiKey;
-
 }

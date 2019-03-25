@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="K_Portfolio">
+<html lang="en" ng-app="korneasPortfolioApp">
 
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Korneas | Product Designer</title>
     <link rel="stylesheet" href="style/normalize.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/blogslider.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
     <link rel="icon" href="img/logo_k.png">
+    <script src="./style/svg-inject.min.js"></script>
 </head>
 
 <body>
@@ -49,14 +48,14 @@
                 <a id="github" class="main_icon" target="_blank" rel="noopener noreferrer"
                     href="https://github.com/Korneas"></a>
                 <a id="linkedin" class="main_icon" target="_blank" rel="noopener noreferrer"
-                    href="https://www.linkedin.com/in/camilo-jose-montoya-24aa1615b/"></a>
+                    href="https://www.linkedin.com/in/korneas/"></a>
                 <a id="behance" class="main_icon" target="_blank" rel="noopener noreferrer"
                     href="https://www.behance.net/Korneas"></a>
                 <a id="instagram" class="main_icon" target="_blank" rel="noopener noreferrer"
                     href="https://www.instagram.com/korneas/"></a>
             </div>
             <div id="mail">
-                <a href="mailto:korneas@outlook.com?subject=Hi Camilo 👋">Get in touch.</a>
+                <a href="mailto:korneas@outlook.com?subject=Hi Camilo 👋">Let's get in touch.</a>
             </div>
         </nav>
         <div id="menu" class="hidden">
@@ -69,11 +68,12 @@
                 </ul>
             </div>
         </div>
-        <div id="container" ng-view></div>
+        <div id="container" class="view" ng-view></div>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
     <script src="js/main.js" type="application/javascript"></script>
     <script src="js/controller.js" type="application/javascript"></script>
 </body>

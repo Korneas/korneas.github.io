@@ -1,13 +1,14 @@
-<div class="content">
-    <div id="project-nav">
+<div id="project_nav">
         <h1 class="titles">{{title}}</h1>
-        <ul id="project-tag-list">
-            <li ng-repeat="tag in tags">{{tag.name}}<sup>{{tag.num}}</sup></li>
+        <ul id="project_tag_list">
+            <li ng-repeat="tag in tags track by $index" ng-click="filterProjects($index)">{{tag.name}}<sup>{{tag.num}}</sup></li>
         </ul>
     </div>
-    <div id="project-list">
-            <div class="project" ng-repeat="project in projects">
-                <div class="inner-project"></div>
-            </div>
+<div class="content">
+    <div id="project_list">
+        <div class="project" ng-repeat="project in projects track by $index" ng-style="{ 'background-image' : 'url({{project.img}})'}">
+            <a ng-href="{{project.link}}" target="_blank"></a>
         </div>
+        <div class="space"></div>
+    </div>
 </div>
