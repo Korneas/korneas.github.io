@@ -12,10 +12,9 @@ $('#menu').hide();
 $(window).on('load', () => {
     $('#k_awaken').attr("src", "img/k_awake.svg");
     $('#loader-text').text("READY!");
-    $('#preloader').hide();
     setTimeout(() => {
         $('#preloader').fadeOut(1000, () => {
-
+            $('#preloader').hide();
         });
     }, 500);
 });
