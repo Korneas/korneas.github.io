@@ -42,7 +42,7 @@ app.controller('ProjectsController', function ($scope) {
     projects = [
         {
             name: "Ikigai",
-            date: "2018",
+            date: "2019",
             description: "Vibrator assistance for blind mobilitation",
             tag: "Interactive",
             img: "",
