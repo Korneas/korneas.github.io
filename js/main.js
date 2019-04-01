@@ -9,10 +9,6 @@ $('#menu').hide();
 //     console.log(window.innerWidth);
 // }, 100);
 
-$(window).on('load', () => {
-    
-});
-
 function toggleMenu() {
     $('.menuicon').toggleClass("on");
     $('.fillBlue').toggleClass("on");
