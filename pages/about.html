@@ -27,16 +27,18 @@
                     <div class="skill_icon" ng-repeat="skill in skills track by $index">
                         <img ng-src="{{skill.icon}}" alt="Skill Icon"
                             ng-style="changeSelected($index)"
-                            ng-click="changeSkill($index)">
+                            ng-mouseover="changeSkill($index)">
                     </div>
                 </div>
             </div>
             <div id="skills_img" ng-style="{'background-image': 'url({{skillImage}})'}">
             </div>
-            <div id="skills_description">
+            <div id="skills_description" ng-class="{ 'change' : changeItem}">
                 <h2 class="subtitle">{{skillName}}</h2>
                 <p class="description">{{skillDescription}}</p>
-                <div id="tools"></div>
+                <div id="tools">
+                    <div class="tool" ng-repeat="tool in skillTools" ng-style="{'background-image': 'url({{skillTools[$index].img}})'}"></div>
+                </div>
             </div>
         </div>
     </div>

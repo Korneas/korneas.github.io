@@ -5,9 +5,9 @@
 
 $('#menu').hide();
 
-// setInterval(() => {
-//     console.log(window.innerWidth);
-// }, 100);
+setInterval(() => {
+    console.log(window.innerWidth);
+}, 100);
 
 $(window).on('load', () => {
     $('#k_awaken').attr("src", "./img/k_awake.svg");
@@ -35,28 +35,31 @@ function toggleMenu() {
     }, 200);
 }
 
+function calculateRes() {
+    return window.innerWidth < 800;
+}
+
 // Open menu
-$('#deploy').on('click', () => {
+$('#menu_block').on('click', () => {
     toggleMenu();
 });
 
 // Logo working as home
 $('#logo').on('click', () => {
+    $('.menulink').css('opacity', '.5');
     window.location = "#";
+    if ($('#mail').hasClass('on')) {
+        toggleMenu();
+    };
 });
 
 // Menu links actions
-$('#homelink').on('click', () => {
-    toggleMenu();
-});
-$('#projectslink').on('click', () => {
-    toggleMenu();
-});
-$('#aboutlink').on('click', () => {
-    toggleMenu();
-});
-$('#contactlink').on('click', () => {
-    toggleMenu();
+$('.menulink').on('click', function (e) {
+    $('.menulink').removeClass('menu_selected');
+    $(this).addClass('menu_selected');
+    if (calculateRes()) {
+        toggleMenu();
+    }
 });
 
 //          PROJECT

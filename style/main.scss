@@ -171,8 +171,10 @@ a:hover {
 }
 
 %fillOn {
-    &.on {
-        fill: $beige;
+    @media only screen and (max-width: 800px) {
+        &.on {
+            fill: $beige;
+        }
     }
 }
 
@@ -203,27 +205,28 @@ a:hover {
     bottom: 40px;
 
     a {
-        background-color: $icons;
+        background-color: $black;
         width: 20px;
         height: 20px;
         -webkit-mask-size: cover;
         mask-size: cover;
-        transition: background-color 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
         cursor: pointer;
         display: block;
+        opacity: .5;
 
         &:nth-child(n+1) {
             margin-top: 20px;
         }
 
         &:hover {
-            background-color: $black;
+            opacity: 1;
         }
     }
 
-    .on {
-        a {
-            &:hover {
+    @media only screen and (max-width: 800px) {
+        &.on {
+            a {
                 background-color: $beige;
             }
         }
@@ -250,7 +253,7 @@ a:hover {
     @include urlSVG("../img/instagram.svg");
 }
 
-#deploy {
+#menu_block {
     position: absolute;
     right: 40px;
     top: 40px;
@@ -286,6 +289,60 @@ a:hover {
             }
         }
     }
+
+    @media only screen and (max-width: 800px) {
+        display: block;
+    }
+
+    @media only screen and (min-width: 800px) {
+        display: none;
+    }
+}
+
+#menu_list {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    height: 25px;
+
+    ul {
+        margin: 2.9px 0;
+        padding: 0;
+
+        li {
+            font-weight: 700;
+            font-size: 1em;
+            margin-right: 30px;
+            display: inline-block;
+            opacity: .5;
+            transition: all .3s ease-in-out;
+
+            a {
+                color: $black;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.menu_selected {
+                opacity: 1;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        display: none;
+    }
+
+    @media only screen and (min-width: 800px) {
+        display: block;
+    }
 }
 
 #mail {
@@ -305,12 +362,14 @@ a:hover {
         }
     }
 
-    &.on {
-        a {
-            color: $beige;
-
-            &:hover {
+    @media only screen and (max-width: 800px) {
+        &.on {
+            a {
                 color: $beige;
+
+                &:hover {
+                    color: $beige;
+                }
             }
         }
     }
@@ -331,6 +390,14 @@ a:hover {
     }
 
     &.out {
+        display: none;
+    }
+
+    @media only screen and (max-width: 800px) {
+        display: block;
+    }
+
+    @media only screen and (min-width: 800px) {
         display: none;
     }
 }
@@ -419,7 +486,7 @@ a:hover {
     sup::selection,
     span::selection {
         color: $white;
-        background: $blue;
+        background: $black;
     }
 
     br::selection {
@@ -440,16 +507,14 @@ a:hover {
     @media only screen and (min-width: 768px) {
         width: 80%;
     }
-
-
-
 }
 
 #init {
     .subtitle {
         margin: 0;
         position: absolute;
-        bottom: 17%;
+        left: 0;
+        bottom: 90px;
         width: 100%;
 
         /* Extra small devices (phones, 600px and down) */
@@ -468,30 +533,6 @@ a:hover {
 
         @media only screen and (min-width: 1340px) {
             font-size: 2.6em;
-        }
-    }
-
-    .links {
-        color: $blue;
-        font-size: 1.2em;
-        position: absolute;
-        bottom: 12%;
-        font-family: $text, 'sans-serif';
-
-        a {
-            margin-right: 20px;
-
-            &:hover {
-                text-decoration: underline;
-                text-decoration-color: $blue;
-            }
-        }
-
-        a:link,
-        a:visited,
-        a:hover,
-        a:active {
-            color: $blue;
         }
     }
 
@@ -615,30 +656,6 @@ a:hover {
     }
 }
 
-.view.ng-leave {
-    animation-name: fadeOutDown;
-    -webkit-animation-duration: 0.4s;
-    -moz-animation-duration: 0.4s;
-    -ms-animation-duration: 0.4s;
-    -o-animation-duration: 0.4s;
-    animation-duration: 0.4s;
-    -webkit-animation-timing-function: ease;
-    -moz-animation-timing-function: ease;
-    -ms-animation-timing-function: ease;
-    -o-animation-timing-function: ease;
-    animation-timing-function: ease;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -ms-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -655,33 +672,59 @@ a:hover {
     }
 }
 
-.view.ng-enter {
-    animation-name: fadeInDown;
-    -webkit-animation-duration: 0.4s;
-    -moz-animation-duration: 0.4s;
-    -ms-animation-duration: 0.4s;
-    -o-animation-duration: 0.4s;
-    animation-duration: 0.4s;
-    -webkit-animation-delay: .5s;
-    -moz-animation-delay: .5s;
-    -ms-animation-delay: .5s;
-    -o-animation-delay: .5s;
-    animation-delay: .5s;
-    -webkit-animation-timing-function: ease;
-    -moz-animation-timing-function: ease;
-    -ms-animation-timing-function: ease;
-    -o-animation-timing-function: ease;
-    animation-timing-function: ease;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -ms-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
+.view {
+    &.ng-enter {
+        animation-name: fadeInDown;
+        -webkit-animation-duration: 0.4s;
+        -moz-animation-duration: 0.4s;
+        -ms-animation-duration: 0.4s;
+        -o-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-delay: .5s;
+        -moz-animation-delay: .5s;
+        -ms-animation-delay: .5s;
+        -o-animation-delay: .5s;
+        animation-delay: .5s;
+        -webkit-animation-timing-function: ease;
+        -moz-animation-timing-function: ease;
+        -ms-animation-timing-function: ease;
+        -o-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -ms-animation-fill-mode: both;
+        -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    &.ng-leave {
+        animation-name: fadeOutDown;
+        -webkit-animation-duration: 0.4s;
+        -moz-animation-duration: 0.4s;
+        -ms-animation-duration: 0.4s;
+        -o-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-timing-function: ease;
+        -moz-animation-timing-function: ease;
+        -ms-animation-timing-function: ease;
+        -o-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -ms-animation-fill-mode: both;
+        -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
 }
 
 .titles {
@@ -1050,6 +1093,8 @@ a:hover {
     #skills_description {
         width: 450px;
         margin-left: 40px;
+        opacity: 1;
+        transition: all .2s ease-in-out;
 
         .subtitle {
             font-size: 2.5em;
@@ -1059,6 +1104,30 @@ a:hover {
         .description {
             width: 100%;
             margin: 20px 0;
+        }
+
+        #tools {
+            height: 30px;
+            width: 100%;
+
+            .tool {
+                display: inline-block;
+                height: 100%;
+                width: 30px;
+                margin-right: 10px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &.change {
+            opacity: 0;
+            transform: translateY(10px);
         }
     }
 

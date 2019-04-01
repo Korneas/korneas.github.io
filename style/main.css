@@ -203,8 +203,10 @@ a:hover {
   transition: all 0.2s ease-in-out;
 }
 
-.on.fillBlue, .on.fillBlack {
-  fill: #fff0dc;
+@media only screen and (max-width: 800px) {
+  .on.fillBlue, .on.fillBlack {
+    fill: #fff0dc;
+  }
 }
 
 #navigation {
@@ -235,15 +237,16 @@ a:hover {
 }
 
 #social a {
-  background-color: #b1b1b1;
+  background-color: #232323;
   width: 20px;
   height: 20px;
   -webkit-mask-size: cover;
   mask-size: cover;
-  -webkit-transition: background-color 0.25s ease-in-out;
-  transition: background-color 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   cursor: pointer;
   display: block;
+  opacity: .5;
 }
 
 #social a:nth-child(n+1) {
@@ -251,11 +254,13 @@ a:hover {
 }
 
 #social a:hover {
-  background-color: #232323;
+  opacity: 1;
 }
 
-#social .on a:hover {
-  background-color: #fff0dc;
+@media only screen and (max-width: 800px) {
+  #social.on a {
+    background-color: #fff0dc;
+  }
 }
 
 #github {
@@ -278,7 +283,7 @@ a:hover {
           mask-image: url("../img/instagram.svg");
 }
 
-#deploy {
+#menu_block {
   position: absolute;
   right: 40px;
   top: 40px;
@@ -286,7 +291,7 @@ a:hover {
   cursor: pointer;
 }
 
-#deploy .menuicon {
+#menu_block .menuicon {
   display: block;
   width: 15px;
   height: 4px;
@@ -295,25 +300,87 @@ a:hover {
   transition: all 0.1s ease-in-out;
 }
 
-#deploy .menuicon.on {
+#menu_block .menuicon.on {
   background-color: #fff0dc;
 }
 
-#deploy .menuicon:nth-child(1), #deploy .menuicon:nth-child(3) {
+#menu_block .menuicon:nth-child(1), #menu_block .menuicon:nth-child(3) {
   margin-left: 10px;
 }
 
-#deploy .menuicon:nth-child(1).on, #deploy .menuicon:nth-child(3).on {
+#menu_block .menuicon:nth-child(1).on, #menu_block .menuicon:nth-child(3).on {
   margin-left: 0;
 }
 
-#deploy .menuicon:nth-child(2) {
+#menu_block .menuicon:nth-child(2) {
   margin-top: 6px;
   margin-bottom: 6px;
 }
 
-#deploy .menuicon:nth-child(2).on {
+#menu_block .menuicon:nth-child(2).on {
   margin-left: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  #menu_block {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #menu_block {
+    display: none;
+  }
+}
+
+#menu_list {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  height: 25px;
+}
+
+#menu_list ul {
+  margin: 2.9px 0;
+  padding: 0;
+}
+
+#menu_list ul li {
+  font-weight: 700;
+  font-size: 1em;
+  margin-right: 30px;
+  display: inline-block;
+  opacity: .5;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#menu_list ul li a {
+  color: #232323;
+}
+
+#menu_list ul li:last-child {
+  margin-right: 0;
+}
+
+#menu_list ul li.menu_selected {
+  opacity: 1;
+}
+
+#menu_list ul li:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 800px) {
+  #menu_list {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #menu_list {
+    display: block;
+  }
 }
 
 #mail a {
@@ -336,12 +403,13 @@ a:hover {
   color: #003cf0;
 }
 
-#mail.on a {
-  color: #fff0dc;
-}
-
-#mail.on a:hover {
-  color: #fff0dc;
+@media only screen and (max-width: 800px) {
+  #mail.on a {
+    color: #fff0dc;
+  }
+  #mail.on a:hover {
+    color: #fff0dc;
+  }
 }
 
 #menu {
@@ -362,6 +430,18 @@ a:hover {
 
 #menu.out {
   display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  #menu {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #menu {
+    display: none;
+  }
 }
 
 #menu_options {
@@ -459,7 +539,7 @@ a:hover {
 .content sup::-moz-selection,
 .content span::-moz-selection {
   color: #fff;
-  background: #003cf0;
+  background: #232323;
 }
 
 .content p::selection,
@@ -469,7 +549,7 @@ a:hover {
 .content sup::selection,
 .content span::selection {
   color: #fff;
-  background: #003cf0;
+  background: #232323;
 }
 
 .content br::-moz-selection {
@@ -501,7 +581,8 @@ a:hover {
 #init .subtitle {
   margin: 0;
   position: absolute;
-  bottom: 17%;
+  left: 0;
+  bottom: 90px;
   width: 100%;
   /* Extra small devices (phones, 600px and down) */
   /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -529,31 +610,6 @@ a:hover {
   #init .subtitle {
     font-size: 2.6em;
   }
-}
-
-#init .links {
-  color: #003cf0;
-  font-size: 1.2em;
-  position: absolute;
-  bottom: 12%;
-  font-family: "Archivo", "sans-serif";
-}
-
-#init .links a {
-  margin-right: 20px;
-}
-
-#init .links a:hover {
-  text-decoration: underline;
-  -webkit-text-decoration-color: #003cf0;
-          text-decoration-color: #003cf0;
-}
-
-#init .links a:link,
-#init .links a:visited,
-#init .links a:hover,
-#init .links a:active {
-  color: #003cf0;
 }
 
 #init #illustration img {
@@ -708,19 +764,6 @@ a:hover {
   }
 }
 
-.view.ng-leave {
-  -webkit-animation-name: fadeOutDown;
-          animation-name: fadeOutDown;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -754,6 +797,19 @@ a:hover {
   animation-duration: 0.4s;
   -webkit-animation-delay: .5s;
   animation-delay: .5s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.view.ng-leave {
+  -webkit-animation-name: fadeOutDown;
+          animation-name: fadeOutDown;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
   -webkit-animation-fill-mode: both;
@@ -1234,6 +1290,9 @@ a:hover {
 #skillContent #skills_description {
   width: 450px;
   margin-left: 40px;
+  opacity: 1;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 #skillContent #skills_description .subtitle {
@@ -1244,5 +1303,30 @@ a:hover {
 #skillContent #skills_description .description {
   width: 100%;
   margin: 20px 0;
+}
+
+#skillContent #skills_description #tools {
+  height: 30px;
+  width: 100%;
+}
+
+#skillContent #skills_description #tools .tool {
+  display: inline-block;
+  height: 100%;
+  width: 30px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#skillContent #skills_description #tools .tool:last-child {
+  margin-right: 0;
+}
+
+#skillContent #skills_description.change {
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 /*# sourceMappingURL=main.css.map */
