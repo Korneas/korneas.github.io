@@ -5,18 +5,12 @@
 
 $('#menu').hide();
 
-setInterval(() => {
-    console.log(window.innerWidth);
-}, 100);
+// setInterval(() => {
+//     console.log(window.innerWidth);
+// }, 100);
 
 $(window).on('load', () => {
-    $('#k_awaken').attr("src", "./img/k_awake.svg");
-    $('#loader-text').text("READY!");
-    setTimeout(() => {
-        $('#preloader').fadeOut(1000, () => {
-            $('#preloader').hide();
-        });
-    }, 500);
+    
 });
 
 function toggleMenu() {

@@ -346,6 +346,7 @@ a:hover {
 }
 
 #menu_list ul li {
+  padding: 2px;
   font-weight: 700;
   font-size: 1em;
   margin-right: 30px;
