@@ -341,12 +341,12 @@ a:hover {
 }
 
 #menu_list ul {
-  margin: 2.9px 0;
+  margin: 0;
   padding: 0;
 }
 
 #menu_list ul li {
-  padding: 2px;
+  padding: 1px;
   font-weight: 700;
   font-size: 1em;
   margin-right: 30px;
@@ -901,6 +901,7 @@ a:hover {
 }
 
 .project {
+  position: relative;
   background-color: #000;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -911,6 +912,8 @@ a:hover {
           user-select: none;
   background-position: center;
   background-size: cover;
+  border-radius: 10px;
+  padding: 0;
 }
 
 @media only screen and (min-width: 800px) {
@@ -947,9 +950,59 @@ a:hover {
 
 .project a {
   display: block;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.project .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.project .overlay:hover {
+  opacity: 1;
+}
+
+.project .overlay p {
+  margin: 0;
+  position: absolute;
+}
+
+.project .overlay .project_date {
+  top: 20px;
+  left: 20px;
+}
+
+.project .overlay .project_tag {
+  top: 20px;
+  right: 20px;
+}
+
+.project .overlay .project_description {
+  bottom: 20px;
+  left: 20px;
+  opacity: .7;
+  font-size: .8em;
+  font-family: "Archivo", "sans-serif";
+}
+
+.project .overlay .project_title {
+  position: absolute;
+  margin: 0;
+  bottom: 40px;
+  left: 20px;
+  font-size: 2em;
 }
 
 .space {

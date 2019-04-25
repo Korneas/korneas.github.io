@@ -2,6 +2,7 @@ var app = angular.module('korneasPortfolioApp', ['ngRoute', 'ngAnimate']);
 
 app.config(['$locationProvider', function ($locationProvider) {
     $locationProvider.hashPrefix('');
+    $locationProvider.html5Mode(true);
 }]);
 
 app.config(function ($routeProvider) {
@@ -27,9 +28,15 @@ app.config(function ($routeProvider) {
             controller: 'ContactController'
         })
 
+        .when('/projects/:projectid', {
+            templateUrl: '../pages/project.html',
+            controller: 'ProjectController'
+        })
+
         .otherwise({
             redirectTo: '/'
         })
+        
 });
 
 app.controller('HomeController', function ($scope) {
@@ -40,36 +47,39 @@ app.controller('ProjectsController', function ($scope) {
     $scope.title = "Projects";
 
     projects = [{
-            name: "Ikigai",
+            name: "Lifekeeper",
+            id: "lifekeeper",
             date: "2019",
-            description: "Vibrator assistance for blind mobilitation",
+            description: "First aid learning app",
             tag: "Interactive",
-            img: "",
+            img: "../img/banners/lifekeeper_banner.jpg",
             link: ""
         },
         {
             name: "Napole",
+            id: "napole",
             date: "2018",
-            description: "Vibrator assistance for blind mobilitation",
+            description: "Assitance system for blind mobility",
             tag: "Interactive",
             img: "../img/banners/napole_banner.png",
             link: "https://www.behance.net/gallery/59197013/Napole-Interactive-design-for-blind-people"
         },
         {
-            name: "Trek Magazine",
-            date: "2015",
-            description: "Vibrator assistance for blind mobilitation",
-            tag: "Branding",
-            img: "../img/banners/trek_banner.png",
-            link: "https://www.behance.net/gallery/37665031/TREK-Travel-Magazine"
-        },
-        {
-            name: "DMI Redesign",
+            name: "DMI Web Concept",
             date: "2016",
-            description: "Vibrator assistance for blind mobilitation",
+            description: "Webpage concept for DMI career in ICESI University",
             tag: "Interactive",
             img: "../img/banners/dmi_banner.png",
             link: "https://www.behance.net/gallery/43404461/DMI"
+        },
+        {
+            name: "The Shining",
+            id: "the-shining",
+            date: "2015",
+            description: "Open title tribute for Stanley Kubrik Film",
+            tag: "Art",
+            img: "",
+            link: ""
         }
     ];
     $scope.projects = projects;

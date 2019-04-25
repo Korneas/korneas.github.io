@@ -4,6 +4,7 @@
 //          MENU
 
 $('#menu').hide();
+$('#preloader').hide();
 
 // setInterval(() => {
 //     console.log(window.innerWidth);
@@ -36,7 +37,7 @@ $('#menu_block').on('click', () => {
 
 // Logo working as home
 $('#logo').on('click', () => {
-    $('.menulink').css('opacity', '.5');
+    $('.menulink').removeClass('menu_selected');
     window.location = "#";
     if ($('#mail').hasClass('on')) {
         toggleMenu();
@@ -120,12 +121,3 @@ var updateTransformStyle = function (x, y) {
     inner.style.oTransform = style;
 }
 */
-
-// Calling Behance API
-
-var apiKey = "8oZRxtP5VMo5D37II1xVHcHWnn5ERCt0";
-var userId = "korneas";
-
-() => {
-    var behanceUserAPI = 'http://www.behance.net/v2/users/' + userId + '/callback=?api_key=' + apiKey;
-}
