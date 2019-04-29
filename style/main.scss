@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow:400,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Archivo');
+@import url('https://fonts.googleapis.com/css?family=Heebo');
 
 $white: #fff;
 $beige: #fff0dc;
@@ -10,7 +11,12 @@ $icons: #b1b1b1;
 
 //Fonts
 $title: 'Barlow';
-$text: 'Archivo';
+$subtitle: 'Archivo';
+$text: 'Heebo';
+
+//Values
+$line_height: 80px;
+$line_height_n: -80px;
 
 * {
     outline: 0;
@@ -867,18 +873,18 @@ a:hover {
             right: 20px;
         }
 
-        .project_description{
+        .project_description {
             bottom: 20px;
             left: 20px;
             opacity: .7;
             font-size: .8em;
-            font-family: $text, 'sans-serif';
+            font-family: $subtitle, 'sans-serif';
         }
 
         .project_title {
             position: absolute;
             margin: 0;
-            bottom: 40px;
+            bottom: 34px;
             left: 20px;
             font-size: 2em;
         }
@@ -888,7 +894,186 @@ a:hover {
 
 .space {
     width: 100%;
-    height: 100px;
+    height: 80px;
+}
+
+.project_preview {
+
+    h1,
+    p {
+        user-select: none;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 7em;
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $blue;
+    }
+
+    p {
+        position: absolute;
+        margin: 0;
+        font-size: 1.5em;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .scrolldown {
+        width: 3px;
+        height: $line_height;
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        .scroll_line {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: linear-gradient(to bottom, $black 50%, rgba(255, 255, 255, 0) 50%);
+            background-position: 0 $line_height_n;
+            background-size: 100% 200%;
+            animation: scrolldown 3s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+            animation-delay: 1s;
+        }
+    }
+}
+
+@keyframes scrolldown {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        background-position: 0 $line_height_n;
+        opacity: 1;
+    }
+
+    80% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 $line_height;
+        opacity: 1;
+    }
+}
+
+.project_overview {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 55%;
+    height: 320px;
+    font-family: $text, 'sans-serif';
+
+    h3,
+    p {
+        margin: 0;
+    }
+
+    h3 {
+        font-family: $subtitle, 'sans-serif';
+        position: absolute;
+        font-size: 2.5em;
+        width: 600px;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    div {
+        display: inline-block;
+    }
+
+    .subtitle {
+        font-family: $subtitle, 'sans-serif';
+        font-weight: 700;
+        color: $blue;
+        margin-bottom: 16px;
+    }
+
+    .project_role,
+    .project_team {
+        width: 150px;
+        position: absolute;
+        left: 0;
+    }
+
+    .project_role {
+        top: 140px;
+    }
+
+    .project_team {
+        top: 223px;
+
+        &.individual {
+            display: none;
+        }
+    }
+
+    .project_summary {
+        width: 650px;
+        position: absolute;
+        right: 0;
+        top: 140px;
+    }
+}
+
+.project_article {
+
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    h2,
+    h4,
+    p {
+        display: block;
+    }
+
+    h2 {
+        font-family: $title, 'sans-serif';
+        font-size: 2.5em;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        position: relative;
+        font-family: $subtitle, 'sans-serif';
+        font-size: 1.5em;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 20px;
+
+        &.alternate {
+            font-weight: 500;
+        }
+
+        &.center {
+            margin: 0 auto;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+
+    p {
+        font-family: $text, 'sans-serif';
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    li {
+        font-family: $text, 'sans-serif';
+    }
 }
 
 .slide {

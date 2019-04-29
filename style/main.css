@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow:400,700,800,900");
 @import url("https://fonts.googleapis.com/css?family=Archivo");
+@import url("https://fonts.googleapis.com/css?family=Heebo");
 * {
   outline: 0;
   -webkit-box-sizing: border-box;
@@ -846,7 +847,7 @@ a:hover {
 }
 
 .description {
-  font-family: "Archivo", "sans-serif";
+  font-family: "Heebo", "sans-serif";
   font-size: .9em;
   line-height: 1.4em;
   color: #232323;
@@ -1000,14 +1001,212 @@ a:hover {
 .project .overlay .project_title {
   position: absolute;
   margin: 0;
-  bottom: 40px;
+  bottom: 34px;
   left: 20px;
   font-size: 2em;
 }
 
 .space {
   width: 100%;
-  height: 100px;
+  height: 80px;
+}
+
+.project_preview h1,
+.project_preview p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.project_preview h1 {
+  margin: 0;
+  font-size: 7em;
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #003cf0;
+}
+
+.project_preview p {
+  position: absolute;
+  margin: 0;
+  font-size: 1.5em;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.project_preview .scrolldown {
+  width: 3px;
+  height: 80px;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.project_preview .scrolldown .scroll_line {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #232323), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(to bottom, #232323 50%, rgba(255, 255, 255, 0) 50%);
+  background-position: 0 -80px;
+  background-size: 100% 200%;
+  -webkit-animation: scrolldown 3s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+          animation: scrolldown 3s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes scrolldown {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    background-position: 0 -80px;
+    opacity: 1;
+  }
+  80% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 80px;
+    opacity: 1;
+  }
+}
+
+@keyframes scrolldown {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    background-position: 0 -80px;
+    opacity: 1;
+  }
+  80% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 80px;
+    opacity: 1;
+  }
+}
+
+.project_overview {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 55%;
+  height: 320px;
+  font-family: "Heebo", "sans-serif";
+}
+
+.project_overview h3,
+.project_overview p {
+  margin: 0;
+}
+
+.project_overview h3 {
+  font-family: "Archivo", "sans-serif";
+  position: absolute;
+  font-size: 2.5em;
+  width: 600px;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.project_overview div {
+  display: inline-block;
+}
+
+.project_overview .subtitle {
+  font-family: "Archivo", "sans-serif";
+  font-weight: 700;
+  color: #003cf0;
+  margin-bottom: 16px;
+}
+
+.project_overview .project_role,
+.project_overview .project_team {
+  width: 150px;
+  position: absolute;
+  left: 0;
+}
+
+.project_overview .project_role {
+  top: 140px;
+}
+
+.project_overview .project_team {
+  top: 223px;
+}
+
+.project_overview .project_team.individual {
+  display: none;
+}
+
+.project_overview .project_summary {
+  width: 650px;
+  position: absolute;
+  right: 0;
+  top: 140px;
+}
+
+.project_article {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.project_article h2,
+.project_article h4,
+.project_article p {
+  display: block;
+}
+
+.project_article h2 {
+  font-family: "Barlow", "sans-serif";
+  font-size: 2.5em;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.project_article h4 {
+  position: relative;
+  font-family: "Archivo", "sans-serif";
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.project_article h4.alternate {
+  font-weight: 500;
+}
+
+.project_article h4.center {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.project_article p {
+  font-family: "Heebo", "sans-serif";
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.project_article li {
+  font-family: "Heebo", "sans-serif";
 }
 
 .slide {
@@ -1180,7 +1379,7 @@ a:hover {
 }
 
 #contact p {
-  font-family: "Archivo", "sans-serif";
+  font-family: "Heebo", "sans-serif";
   font-size: 1.55em;
   margin: 20px 0;
 }

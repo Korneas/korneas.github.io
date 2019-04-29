@@ -1,0 +1,23 @@
+<div class="project_preview slide">
+    <p>{{project.date}}</p>
+    <h1>{{project.name}}</h1>
+    <div class="scrolldown">
+        <div class="scroll_line"></div>
+    </div>
+</div>
+<div class="project_overview">
+    <h3 class="project_title">{{project.title}}</h3>
+    <div class="project_role">
+        <p class="subtitle">ROLE</p>
+        <p>{{project.role}}</p>
+    </div>
+    <div class="project_summary">
+            <p class="subtitle">OVERVIEW</p>
+            <p>{{project.overview}}</p>
+    </div>
+    <div class="project_team" ng-class="{ 'individual' : personal}">
+        <p class="subtitle">TEAM</p>
+        <p>{{project.team}}</p>
+    </div>
+</div>
+<div ng-include="project.url"></div>

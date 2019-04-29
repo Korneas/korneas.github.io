@@ -1,8 +1,94 @@
 var app = angular.module('korneasPortfolioApp', ['ngRoute', 'ngAnimate']);
 
+var projects = [{
+        name: "Lifekeeper",
+        id: "lifekeeper",
+        date: "2019",
+        description: "First aid learning and emergency app",
+        tag: "Interactive",
+        img: "../img/banners/lifekeeper_banner.jpg",
+        behance: "https://www.behance.net/gallery/79272003/Lifekeeper-First-Aid-App",
+        url: "../pages/projects/lifekeeper.html",
+        title: "First aid learning and emergency mobile application",
+        role: "UI/UX Designer",
+        team: "Camilo Montoya, Juan Piedrahita",
+        overview: "Lifekeeper is a user-friendly interface to learn first aid, using the theoretical-practical learning model applied to the content of different entities that teach on the subject, and help during an emergency situation."
+    },
+    {
+        name: "Hictio",
+        id: "hictio",
+        date: "2018",
+        description: "Interactive accesible system for museography",
+        tag: "Interactive",
+        img: "",
+        behance: "",
+        url: "",
+        title: "The fear of a transpersonal state with the universe",
+        role: "Artist",
+        team: "Camilo Montoya",
+        overview: "Nightmares is a collection of renders that want to recreate concepts"
+    },
+    {
+        name: "Nightmares",
+        id: "nightmares",
+        date: "2018",
+        description: "The fear of a transpersonal state",
+        tag: "Art",
+        img: "../img/banners/nightmares_banner.png",
+        behance: "",
+        url: "",
+        title: "The fear of a transpersonal state with the universe",
+        role: "Artist",
+        team: "Camilo Montoya",
+        overview: "Nightmares is a collection of renders that want to recreate concepts"
+    },
+    {
+        name: "Napole",
+        id: "napole",
+        date: "2018",
+        description: "Assitance system for blind mobility",
+        tag: "Interactive",
+        img: "../img/banners/napole_banner.png",
+        behance: "https://www.behance.net/gallery/59197013/Napole-Interactive-design-for-blind-people",
+        url: "",
+        title: "Assistance system for blind mobility during Google Maps trip",
+        role: "UI/UX Developer",
+        team: "Camilo Montoya, David Giraldo",
+        overview: "Napole is"
+    },
+    {
+        name: "Patronus",
+        id: "patronus",
+        date: "2017",
+        description: "Recommendation system for safe routes",
+        tag: "Interactive",
+        img: "",
+        behance: "",
+        url: "",
+        title: "",
+        role: "UI/UX Developer",
+        team: "Camilo Montoya, Stephany Gomez",
+        overview: "Napole is"
+    },
+    {
+        name: "The Shining",
+        id: "the-shining",
+        date: "2015",
+        description: "Open title tribute of Stanley Kubrik Film",
+        tag: "Art",
+        img: "../img/banners/theshining_banner.png",
+        behance: "",
+        url: "",
+        title: "Open title tribute of Stanley Kubrik film",
+        role: "Art Director",
+        team: "Camilo Montoya, David Giraldo",
+        overview: "Aiming to"
+    }
+];
+
 app.config(['$locationProvider', function ($locationProvider) {
     $locationProvider.hashPrefix('');
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 }]);
 
 app.config(function ($routeProvider) {
@@ -30,13 +116,13 @@ app.config(function ($routeProvider) {
 
         .when('/projects/:projectid', {
             templateUrl: '../pages/project.html',
-            controller: 'ProjectController'
+            controller: 'ProjectControl'
         })
 
         .otherwise({
             redirectTo: '/'
         })
-        
+
 });
 
 app.controller('HomeController', function ($scope) {
@@ -46,42 +132,6 @@ app.controller('HomeController', function ($scope) {
 app.controller('ProjectsController', function ($scope) {
     $scope.title = "Projects";
 
-    projects = [{
-            name: "Lifekeeper",
-            id: "lifekeeper",
-            date: "2019",
-            description: "First aid learning app",
-            tag: "Interactive",
-            img: "../img/banners/lifekeeper_banner.jpg",
-            link: ""
-        },
-        {
-            name: "Napole",
-            id: "napole",
-            date: "2018",
-            description: "Assitance system for blind mobility",
-            tag: "Interactive",
-            img: "../img/banners/napole_banner.png",
-            link: "https://www.behance.net/gallery/59197013/Napole-Interactive-design-for-blind-people"
-        },
-        {
-            name: "DMI Web Concept",
-            date: "2016",
-            description: "Webpage concept for DMI career in ICESI University",
-            tag: "Interactive",
-            img: "../img/banners/dmi_banner.png",
-            link: "https://www.behance.net/gallery/43404461/DMI"
-        },
-        {
-            name: "The Shining",
-            id: "the-shining",
-            date: "2015",
-            description: "Open title tribute for Stanley Kubrik Film",
-            tag: "Art",
-            img: "",
-            link: ""
-        }
-    ];
     $scope.projects = projects;
 
     $scope.tags = [{
@@ -352,6 +402,30 @@ app.controller('ContactController', function ($scope) {
     $scope.k_msg = "Contacto";
 });
 
+app.controller('ProjectControl', function ($scope, $routeParams, $window) {
+    var id = $routeParams.projectid;
+
+    var inproject = projects.find((project) => {
+        return project.id === id;
+    });
+
+    $scope.project = inproject;
+
+    setInterval(() => {
+        if ($window.scrollY >= 400) {
+            $('.scrolldown').fadeOut();
+        } else {
+            $('.scrolldown').fadeIn();
+        }
+    }, 200);
+
+    if (!inproject.team.includes(",")) {
+        $scope.personal = true;
+    } else {
+        $scope.personal = false;
+    }
+});
+
 app.run(function ($rootScope, $timeout, $window) {
 
     $rootScope.loaded = function () {
@@ -367,6 +441,6 @@ app.run(function ($rootScope, $timeout, $window) {
     $rootScope.$on('$routeChangeSuccess', function () {
         $timeout(function () {
             $window.scrollTo(0, 0);
-        }, 1000);
+        }, 400);
     });
 });

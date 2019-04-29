@@ -10,7 +10,7 @@
         <div class="project" ng-repeat="project in projects track by $index"
             ng-style="{ 'background-image' : 'url({{project.img}})'}">
             <div class="overlay">
-                <a ng-href="projects/{{project.id}}"></a>
+                <a ng-href="#/projects/{{project.id}}"></a>
                 <p class="project_date">{{project.date}}</p>
                 <p class="project_tag">{{project.tag}}</p>
                 <h3 class="project_title">{{project.name}}</h3>

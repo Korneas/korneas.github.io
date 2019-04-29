@@ -5,6 +5,7 @@
 
 $('#menu').hide();
 $('#preloader').hide();
+AOS.init();
 
 // setInterval(() => {
 //     console.log(window.innerWidth);
