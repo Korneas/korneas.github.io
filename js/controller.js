@@ -50,11 +50,11 @@ var projects = [{
         tag: "Interactive",
         img: "../img/banners/napole_banner.png",
         behance: "https://www.behance.net/gallery/59197013/Napole-Interactive-design-for-blind-people",
-        url: "",
+        url: "../pages/projects/napole.html",
         title: "Assistance system for blind mobility during Google Maps trip",
         role: "UI/UX Developer",
         team: "Camilo Montoya, David Giraldo",
-        overview: "Napole is"
+        overview: "Napole is a wearable and mobile app to help blind people navigate with Google Maps, just wearing a cap a planning their trip on their smartphone. This is based on investigations about our objective public to help them while they walk in unknown places"
     },
     {
         name: "Patronus",
@@ -69,20 +69,6 @@ var projects = [{
         role: "UI/UX Developer",
         team: "Camilo Montoya, Stephany Gomez",
         overview: "Napole is"
-    },
-    {
-        name: "The Shining",
-        id: "the-shining",
-        date: "2015",
-        description: "Open title tribute of Stanley Kubrik Film",
-        tag: "Art",
-        img: "../img/banners/theshining_banner.png",
-        behance: "",
-        url: "",
-        title: "Open title tribute of Stanley Kubrik film",
-        role: "Art Director",
-        team: "Camilo Montoya, David Giraldo",
-        overview: "Aiming to"
     }
 ];
 

@@ -6,8 +6,11 @@ $white: #fff;
 $beige: #fff0dc;
 $blue: #003cf0;
 $black: #232323;
+$gray: #888888;
 $alphaOff: #00000000;
 $icons: #b1b1b1;
+
+$lifekeeper: #ff0050;
 
 //Fonts
 $title: 'Barlow';
@@ -974,6 +977,13 @@ a:hover {
     height: 320px;
     font-family: $text, 'sans-serif';
 
+    p::selection,
+    h3::selection,
+    h2::selection {
+        color: $white;
+        background: $black;
+    }
+
     h3,
     p {
         margin: 0;
@@ -1033,6 +1043,50 @@ a:hover {
     margin: 0 auto;
     margin-top: 20px;
 
+    p::selection,
+    h1::selection,
+    h2::selection,
+    h4::selection,
+    li::selection,
+    img::selection,
+    br::selection,
+    sup::selection,
+    span::selection {
+        color: $white;
+        background: $black;
+    }
+
+    .flexing {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        flex-wrap: wrap;
+
+        .icon {
+            width: 15%;
+            height: 120px;
+            float: left;
+            padding-right: 15px;
+
+            img {
+                max-width: auto;
+                max-height: 40px;
+            }
+        }
+
+        .principle {
+
+            width: 35%;
+            margin: 0 5%;
+
+            h4 {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
     h2,
     h4,
     p {
@@ -1041,9 +1095,11 @@ a:hover {
 
     h2 {
         font-family: $title, 'sans-serif';
-        font-size: 2.5em;
-        margin: 0;
-        margin-bottom: 20px;
+        font-size: 3em;
+        margin: 60px 0 20px 0;
+        color: $blue;
+        text-align: center;
+        clear: both;
     }
 
     h4 {
@@ -1053,9 +1109,10 @@ a:hover {
         font-weight: 700;
         margin: 0;
         margin-bottom: 20px;
+        color: $black;
 
         &.alternate {
-            font-weight: 500;
+            color: $gray;
         }
 
         &.center {
@@ -1069,10 +1126,77 @@ a:hover {
         font-family: $text, 'sans-serif';
         margin: 0;
         margin-bottom: 20px;
+
+        &.center {
+            text-align: center;
+        }
     }
 
     li {
         font-family: $text, 'sans-serif';
+    }
+
+    img {
+        margin: 0 auto;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+
+        &.center-h {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.alpha {
+            padding: 20px;
+        }
+    }
+
+    div {
+        &.image {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &.image-full {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 500px;
+            //background-color: $black;
+            margin-bottom: 20px;
+        }
+
+        &.image-half {
+            display: inline-block;
+            position: relative;
+            width: 50%;
+            height: 500px;
+        }
+
+        &.half {
+            width: 45%;
+
+            &.left {
+                margin: 0 5% 20px 0;
+                text-align: right;
+            }
+
+            &.right {
+                margin: 0 0 20px 5%;
+                text-align: left;
+            }
+
+            &.center {
+                margin: 0 auto 20px auto;
+                text-align: center;
+            }
+        }
     }
 }
 

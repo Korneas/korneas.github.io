@@ -1,0 +1,173 @@
+<div class="project_article">
+    <div class="image-full">
+        <img src="/img/projects/napole/start_composition.png" alt="Napole illustration" class="center-h">
+    </div>
+    <h2>Main Task</h2>
+    <div class="flexing">
+        <div class="image-half">
+            <img src="/img/projects/napole/start_screen.png" alt="Mockup of Napole interface" class="center-h alpha">
+        </div>
+        <div class="half right">
+            <h4>Description</h4>
+            <p>Napole is a wearable and app that help blind people to have a better orientation about a specific route
+                created by them in Google Maps.
+                <br><br>
+                This interaction is made using Lilypad Arduino, a Bluetooth module and some vibbers, all this stuff
+                attatched to the Napole Cap.</p>
+        </div>
+    </div>
+    <h2>Problem</h2>
+    <div class="flexing">
+        <div class="half left">
+            <h4>Blindness</h4>
+            <p>In the world, more than 204 millions of people are affected by blindness. And it's difficult for this
+                poblation to travel because they need to trust a new route to go to a place.</p>
+            <h4>Trust in new routes</h4>
+            <p>User have fear when they are going to explore new routes using Google Maps, cause they can get lost when
+                the voice of the app speaker wasn't understandable or other facts.</p>
+        </div>
+        <div class="image-half">
+            <img src="/img/projects/napole/problem.png" alt="Blind icon" class="center-h alpha">
+        </div>
+    </div>
+    <h2>State of Art</h2>
+    <div class="flexing">
+        <div class="image-half">
+            <img src="/img/projects/napole/state_art.png" alt="Blind tech" class="center-h alpha">
+        </div>
+        <div class="half right">
+            <h4>Blind tech</h4>
+            <p>In our references, we have some devices for blind people like Victor Reader Trek a GPS that can give you
+                directions with earphones, or Beacons Technology, the one to mark some interest points in places that
+                have this Beacons, and the maps app can know what place it is.</p>
+        </div>
+    </div>
+    <h2>Prototype</h2>
+    <p>For the wearable we use LilyPad Arduino, the RN-42 Bluetooth module, a buzzer for sounds that are related with
+        the trip and 5 vibbers for the directions: front, right, left, front-right and front-left. All of this were
+        attatched to a cap using the Lilypad conductor thread and we use it as our low prototype.</p>
+    <div class="flexing">
+        <div class="half left">
+            <h4>Wearable lifetime</h4>
+            <p>The Lilypad is powered by a 3.7V battery that have a duration of 1 to 3 hours based on the board process.
+                And is covered with a patch on the cap for the safety on the user when there is a rainy day.</p>
+        </div>
+        <div class="image-half">
+            <img src="/img/projects/napole/caps.png" alt="Caps with Napole Wearable" class="center-h alpha">
+        </div>
+    </div>
+    <div class="image-full">
+        <img src="/img/projects/napole/cap_band.png" alt="Explosion diagram of circuit" class="center-h">
+    </div>
+    <h4 class="alternate center">Circuit</h4>
+    <div class="image" style="height: 200px;">
+        <img src="/img/projects/napole/circuit.png" alt="Lilypad circuit description" class="center-h">
+    </div>
+    <p class="center">Illustration of the electronic components made in Fritzing</p>
+    <h2>Application Development</h2>
+    <p>The mobile app were developed using Android Studio to test the Bluetooth connection. The interface is designed
+        thinking in the blind people, using gestures to support TalkBack and voice commands.</p>
+    <div class="image-full">
+        <img src="/img/projects/napole/app.png" alt="Napole mobile app mockup" class="center-h">
+    </div>
+    <h2>Userflow</h2>
+    <div class="flexing">
+        <div class="half left">
+            <h4>Step 1</h4>
+            <p>To start using Napole, first you need to start a trip in Google Maps, blind people can do this with
+                their voice using different types of commands.
+                <br><br>
+                You would need to start the navigation for a better experience with Napole.</p>
+        </div>
+        <div class="image-half">
+            <img src="/img/projects/napole/step_1.png" alt="Google Maps route" class="center-h">
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="image-half">
+            <img src="/img/projects/napole/step_2.png" alt="Napole cap and interface" class="center-h">
+        </div>
+        <div class="half right">
+            <h4>Step 2</h4>
+            <p>Wear the Napole Cap, turn it on just pressing the patch. Then open the app and just tap the initial
+                screen to sync the information of your Google Maps route in the device.</p>
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="half left">
+            <h4>Step 3</h4>
+            <p>The vibbers of the Napole Cap would vibe in a secuential order as an example for you to test if the
+                actual level of vibration.
+                <br><br>
+                If the user think is too strong or weak, they can change it using their voice
+                commands, then they would tab to start the trip.</p>
+        </div>
+        <div class="image-half">
+            <img src="/img/projects/napole/step_3.png" alt="Napole interface" class="center-h">
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="image-half">
+            <img src="/img/projects/napole/step_4.png" alt="Napole cap and bluetooth" class="center-h">
+        </div>
+        <div class="half right">
+            <h4>Step 4</h4>
+            <p>While walking, the user would recibe a vibration in the direction where they have to go,
+                this vibration react with directions like turn left, cross the street or keep walking.</p>
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="half left">
+            <h4>Step 5</h4>
+            <p>When they arrived to their destiny the app would check that the route was completed and activate the
+                buzzer to play a song to let the user know that the travel ends.</p>
+        </div>
+        <div class="image-half">
+            <img src="/img/projects/napole/step_5.png" alt="Napole finished screen" class="center-h">
+        </div>
+    </div>
+    <h2>User Testing</h2>
+    <p>For the user testing we use a computer with Arduino Desktop to send different chars in the Serial Monitor, and a
+        USB wire connected to this PC and the Lilypad. Depending of the char it will send different types of vibration
+        to the Lilypad based on a specific direction.
+
+    </p>
+    <div class="flexing">
+        <div class="image-half">
+            <img src="/img/projects/napole/testing_1.png" alt="User testing photo" class="center-h alpha">
+        </div>
+        <div class="half right">
+            <h4>Blind simulation</h4>
+            <p>We create a headband where the Lilypad is attatched and the vibbers to put it around the head. And
+                simulate blindness with a band that cover the eyes.</p>
+            <h4 class="alternate">Place</h4>
+            <p>ICESI University</p>
+            <h4 class="alternate">Subject</h4>
+            <p>Juan David Figueroa</p>
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="half left">
+            <h4>Walking without cognitive charge</h4>
+            <p>In this test, the user were focused only in the vibrations of the band while he was walking in a
+                treadmill. We send vibrations and he had to move him hand to the direction he percibes the vibration. We
+                repeat this process 10 times.</p>
+        </div>
+        <div class="image-half">
+            <img src="/img/projects/napole/testing_2.png" alt="User testing photo" class="center-h alpha">
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="image-half">
+            <img src="/img/projects/napole/testing_3.png" alt="User testing photo" class="center-h alpha">
+        </div>
+        <div class="half right">
+            <h4>Walking with cognitive charge</h4>
+            <p>This second test was quite similar to the first but the subject had to talk with te interviewer and
+                moving
+                him hand while he was telling a story. With this test, we want to prove that the user can do more tasks
+                while they are wearing the headband.</p>
+        </div>
+    </div>
+</div>
+<div class="space"></div>
