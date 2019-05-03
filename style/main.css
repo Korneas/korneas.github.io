@@ -212,8 +212,10 @@ a:hover {
 
 #navigation {
   position: fixed;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 10;
   pointer-events: none;
 }
@@ -385,10 +387,13 @@ a:hover {
   }
 }
 
-#mail a {
+#mail {
   position: absolute;
   right: 40px;
   bottom: 40px;
+}
+
+#mail a {
   text-align: right;
   cursor: pointer;
   color: #232323;
@@ -1278,6 +1283,14 @@ a:hover {
   text-align: center;
 }
 
+.project_article h4.right {
+  text-align: right;
+}
+
+.project_article h4.no-margin {
+  margin-bottom: 0;
+}
+
 .project_article p {
   font-family: "Heebo", "sans-serif";
   margin: 0;
@@ -1286,6 +1299,10 @@ a:hover {
 
 .project_article p.center {
   text-align: center;
+}
+
+.project_article p.right {
+  text-align: right;
 }
 
 .project_article li {
@@ -1319,6 +1336,19 @@ a:hover {
   margin-bottom: 20px;
 }
 
+.project_article div.image-screen {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.project_article div.image-screen::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
 .project_article div.image-full {
   position: relative;
   display: block;
@@ -1331,7 +1361,27 @@ a:hover {
   display: inline-block;
   position: relative;
   width: 50%;
-  height: 500px;
+}
+
+.project_article div.image-half::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.project_article div.image-third {
+  display: inline-block;
+  position: relative;
+  width: 33.33%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project_article div.image-third::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .project_article div.half {

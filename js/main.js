@@ -7,9 +7,13 @@ $('#menu').hide();
 $('#preloader').hide();
 AOS.init();
 
-// setInterval(() => {
-//     console.log(window.innerWidth);
-// }, 100);
+let vh = window.innerHeight * 0.01;
+document.getElementById('navigation').style.setProperty('--vh',`${vh}px`);
+
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.getElementById('navigation').style.setProperty('--vh', `${vh}px`);
+  });
 
 function toggleMenu() {
     $('.menuicon').toggleClass("on");
