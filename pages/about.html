@@ -31,7 +31,8 @@
                     </div>
                 </div>
             </div>
-            <div id="skills_img" ng-style="{'background-image': 'url({{skillImage}})'}">
+            <div id="skills_img" ng-class="{ 'change' : changeItem}">
+                <img src="{{skillImage}}" alt="">
             </div>
             <div id="skills_description" ng-class="{ 'change' : changeItem}">
                 <h2 class="subtitle">{{skillName}}</h2>

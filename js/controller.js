@@ -262,7 +262,7 @@ app.controller('AboutController', function ($scope, $timeout) {
             img: "../img/tools/processing.png"
         }
         ],
-        image: "",
+        image: "../img/skills/pic/gaming.png",
         icon: "../img/skills/icon/game.svg"
     }
     ];
