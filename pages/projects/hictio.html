@@ -1,0 +1,103 @@
+<div class="project_article hictio">
+    <h2>Context</h2>
+    <p>In the city of Cali, Colombia, there are around ten thousand blind people walking the streets and sharing with
+        their friends everyday. They recognize that there are difficulties when they want to do tourism activities
+        because the city infrastructure isn’t ready for them due to the lack of accessibility.</p>
+    <h2>Problem</h2>
+    <p>The “Zoológico de Cali” is one of the most important touristic places in Cali, but unfortunately, the experience
+        doesn’t have the accessibility needed for blind or partially sighted visitors.
+        <br><br>
+        And the aquarium is the most critical point, only offers visual stimuli to learn about the animals and don’t
+        have accessible guides to walk around as a blind.
+    </p>
+    <h2>Field Work</h2>
+    <h4>Human-centered design</h4>
+    <p>We visit the zoo with two blind people and one partially sighted person to tour the place and study the
+        experience. We told them to think aloud their ideas and impressions in every exhibition, specially in the
+        aquarium. Also, we did an immersive experience covering our eyes in the butterflies and the birds exhibition to
+        understand the experience as a blind person.</p>
+    <h4>Results and validations</h4>
+    <div class="flexing">
+        <div class="image-half">
+            <!-- imagenxd -->
+        </div>
+        <div class="half right">
+            <p>Haptic stimuli represents in blind people the creation of a cognitive image to understand their
+                surrounding. That's why they love to touch statues or animals replicas in the tour, cause it represents,
+                as they said, a valuable and remarkable experience.</p>
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="half left">
+            <p>Blind people use their phones with screen readers such as “VoiceOver” and “TalkBack” to give them
+                information about their navigation inside an app. This makes that they always want to get sound feedback
+                in the experience, creating context of the exhibition, as the narrative stories do in some of them.</p>
+        </div>
+        <div class="image-half">
+            <!-- imagenxd -->
+        </div>
+    </div>
+    <div class="flexing">
+        <div class="image-half">
+            <!-- imagenxd -->
+        </div>
+        <div class="half right">
+            <p>The use of social applications like Facebook, Whatsapp or Instagram, in the blind context, help them to
+                keep close their friends to create blind community as they can do activities together like blind soccer,
+                hiking, hear tv narrated series and more..</p>
+        </div>
+    </div>
+    <h2>Ideation</h2>
+    <h4>Process</h4>
+    <p>To deliver meaningful experiences we started brainstorming ideas to solve the problem for different perspectives
+        using as a base a customer journey map, that explain the emotions the blind people feel while doing a tourism
+        activity.
+    </p>
+    <h2>User Testing</h2>
+    <p>In our field investigation, we made different tests to 8 blind people, to get feedback from the items or to keep
+        record of how they interact with our prototype.</p>
+    <h4>Haptic Experience</h4>
+    <p>To understand the blind process to create a cognitive image through tactile surfaces, we made physical fishes
+        replicas that were touched by the users. As a result we identified the most touched parts of the fishes where we
+        installed vibro-tactile sensors to trigger interactions.</p>
+    <h4>Mobile App Usability</h4>
+    <p>Based on the gestures they used to do specific interactions in their phone, we test different gestures navigation
+        systems for the blind userflow, and unique gestures for fish identification interaction.</p>
+    <h4>Ergonomic Evaluation</h4>
+    <p>We made different structures and conducted an ergonomic evaluation with low fidelity prototype to set physical
+        product height, and the height of the fishes replica in the installation related to the user.</p>
+    <h4>NFC Wristband</h4>
+    <p>As the interaction inside the aquarium requires to know if the user is in the physical installation, we used NFC
+        tech applied to tag holders and test which model was easiest to use. The result was that the slap-wristband with
+        NFC tag inside was more familiar to wear and has a flexible size.</p>
+    <h2>Design Proposal</h2>
+    <p>Introducing Hictio, an interactive accessible system that combines physical and digital interaction to enhance
+        the experience inside the “Zoológico de Cali” aquarium and improve the recall of information in the exhibition.
+        <br><br>
+        Integrates a mobile app that guides the visitor through the experience with audio narratives, a group of
+        vibro-tactile fishes models attached to a physical installation, NFC wristband for each user that trigger
+        interactions, and BLE (Bluetooth Low Energy) beacons for proximity events and exhibition marking.
+    </p>
+    <h2>UX Storytelling</h2>
+    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/pQrXon1R8cY" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h2>Product Userflow</h2>
+    <h4>1. Gesture-based Navigation</h4>
+    <p>Hictio is a button-less mobile application, with gesture-based navigation. Using common gestures such as swipe,
+        tap, double tap and pinch, for and easy user interaction with blind and sighted people.</p>
+    <h4>2. Proximity Events</h4>
+    <p>When BLE beacons are detected, the app shows and talk in where exhibition we’re located and triggers an
+        interaction to collect the fish in the app. Just like a PokemonGo gameplay with proximity interaction instead of
+        GPS.</p>
+    <h4>3. Physical Interaction</h4>
+    <p>The physical installation is located in the middle of the aquarium, it holds a TCP-IP Server with LAN connection,
+        hosted in a Raspberry PI B+. The user can send messages to make the installation play a sound and locate it.</p>
+    <h4>4. NFC Connection</h4>
+    <p>Once the user is in front of the installation, the visitor puts the NFC wristband near the NFC reader. Now the
+        server knows exactly to which user is connected with, in order to send instructions for the fish interaction.
+    </p>
+    <h4>5. Vibro-tactile Stimuli & Narrative Experience</h4>
+    <p>Each fish replica has vibro-tactile sensors under its rubber skin that detect whether the fish has been touched
+        or not. Depending on the point the user touch, an audio narrative is triggered in the app.</p>
+</div>
+<div class="space"></div>

@@ -1,72 +1,59 @@
+//Developed by: Camilo Jose Montoya | @korneas
 var app = angular.module('korneasPortfolioApp', ['ngRoute', 'ngAnimate']);
 
 var projects = [{
-        name: "Lifekeeper",
-        id: "lifekeeper",
-        date: "2019",
-        description: "First aid learning and emergency app",
-        tag: "Interactive",
-        img: "../img/banners/lifekeeper_banner.jpg",
-        url: "../pages/projects/lifekeeper.html",
-        title: "First aid learning and emergency mobile application",
-        role: "UI/UX Designer",
-        team: "Camilo Montoya, Juan Piedrahita",
-        overview: "Lifekeeper is a user-friendly interface to learn first aid, using the theoretical-practical learning model applied to the content of different entities that teach on the subject, and help during an emergency situation."
-    },
-    {
-        name: "Hictio",
-        id: "hictio",
-        date: "2018",
-        description: "Interactive accesible system for museography",
-        tag: "Interactive",
-        img: "",
-        behance: "",
-        url: "",
-        title: "The fear of a transpersonal state with the universe",
-        role: "Artist",
-        team: "Camilo Montoya",
-        overview: "Nightmares is a collection of renders that want to recreate concepts"
-    },
-    {
-        name: "Nightmares",
-        id: "nightmares",
-        date: "2018",
-        description: "The distorted perception of the reality",
-        tag: "Art",
-        img: "../img/banners/nightmares_banner.png",
-        url: "../pages/projects/nightmares.html",
-        title: "The distorted perception of the reality and the human being",
-        role: "Artist",
-        team: "Camilo Montoya",
-        overview: "Nightmares is a collection of renders based in the human liberation in the postmodern time. Taking concepts like the self evolution, the duality and the distortion in the individual perception of the world, to create a series that place the human being confronting his dark conception of the reality."
-    },
-    {
-        name: "Napole",
-        id: "napole",
-        date: "2018",
-        description: "Assitance system for blind mobility",
-        tag: "Interactive",
-        img: "../img/banners/napole_banner.png",
-        url: "../pages/projects/napole.html",
-        title: "Assistance system for blind mobility during Google Maps trip",
-        role: "UI/UX Developer",
-        team: "Camilo Montoya, David Giraldo",
-        overview: "Napole is a wearable and mobile app to help blind people navigate with Google Maps, just wearing a cap a planning their trip on their smartphone. This is based on investigations about our objective public to help them while they walk in unknown places"
-    },
-    {
-        name: "Patronus",
-        id: "patronus",
-        date: "2017",
-        description: "Recommendation system for safe routes",
-        tag: "Interactive",
-        img: "",
-        behance: "",
-        url: "",
-        title: "",
-        role: "UI/UX Developer",
-        team: "Camilo Montoya, Stephany Gomez",
-        overview: "Napole is"
-    }
+    name: "Lifekeeper",
+    id: "lifekeeper",
+    date: "2019",
+    description: "First aid learning and emergency app",
+    tag: "Interactive",
+    img: "../img/banners/lifekeeper_banner.jpg",
+    url: "../pages/projects/lifekeeper.html",
+    title: "First aid learning and emergency mobile application",
+    role: "UI/UX Designer",
+    team: "Camilo Montoya, Juan Piedrahita",
+    overview: "Lifekeeper is a user-friendly interface to learn first aid, using the theoretical-practical learning model applied to the content of different entities that teach on the subject, and help during an emergency situation."
+},
+{
+    name: "Hictio",
+    id: "hictio",
+    date: "2018",
+    description: "Interactive accessible system for museography",
+    tag: "Interactive",
+    img: "../img/banners/hictio_banner.jpg",
+    behance: "",
+    url: "../pages/projects/hictio.html",
+    title: "Interactive accessible system for museography and blind inclusion",
+    role: "Product Designer",
+    team: "Camilo Montoya, David Giraldo",
+    overview: `Hictio offers an interactive and accessible museography experience in the aquarium of the "Zoológico de Cali" in Cali, Colombia. Where blind and sighted people inside the place can learn about the fishes using: a mobile app designed with TalkBack gestures, wristbands with NFC tech, BLE (Bluetooth low energy) beacons for proximity events and vibro-tactile silicone fish sculpture attached to an interactive installation.`
+},
+{
+    name: "Nightmares",
+    id: "nightmares",
+    date: "2018",
+    description: "The distorted perception of the reality",
+    tag: "Art",
+    img: "../img/banners/nightmares_banner.png",
+    url: "../pages/projects/nightmares.html",
+    title: "The distorted perception of the reality and the human being",
+    role: "Artist",
+    team: "Camilo Montoya",
+    overview: "Nightmares is a collection of renders based in the human liberation in the postmodern time. Taking concepts like the self evolution, the duality and the distortion in the individual perception of the world, to create a series that place the human being confronting his dark conception of the reality."
+},
+{
+    name: "Napole",
+    id: "napole",
+    date: "2018",
+    description: "Assistance system for secure mobility",
+    tag: "Interactive",
+    img: "../img/banners/napole_banner.png",
+    url: "../pages/projects/napole.html",
+    title: "Assistance system for secure mobility during Google Maps trip",
+    role: "UI/UX Developer",
+    team: "Camilo Montoya, David Giraldo",
+    overview: "Napole is a wearable and mobile app to help blind and sighted people navigate with Google Maps, just wearing a cap a planning their trip on their smartphone. This is based on investigations about our objective public to help them while they walk in unknown places"
+}
 ];
 
 app.config(['$locationProvider', function ($locationProvider) {
@@ -118,27 +105,27 @@ app.controller('ProjectsController', function ($scope) {
     $scope.projects = projects;
 
     $scope.tags = [{
-            name: "All",
-            num: projects.length
-        },
-        {
-            name: "Interactive",
-            num: projects.filter((project) => {
-                return project.tag === "Interactive"
-            }).length
-        },
-        {
-            name: "Branding",
-            num: projects.filter((project) => {
-                return project.tag === "Branding"
-            }).length
-        },
-        {
-            name: "Art",
-            num: projects.filter((project) => {
-                return project.tag === "Art"
-            }).length
-        }
+        name: "All",
+        num: projects.length
+    },
+    {
+        name: "Interactive",
+        num: projects.filter((project) => {
+            return project.tag === "Interactive"
+        }).length
+    },
+    {
+        name: "Branding",
+        num: projects.filter((project) => {
+            return project.tag === "Branding"
+        }).length
+    },
+    {
+        name: "Art",
+        num: projects.filter((project) => {
+            return project.tag === "Art"
+        }).length
+    }
     ];
 });
 
@@ -153,169 +140,169 @@ app.controller('AboutController', function ($scope, $timeout) {
     $scope.skillTitle = "Skills";
 
     skillsList = [{
-            title: "UI Design",
-            description: "Capacity to design digital user interfaces that convey client values and maximize usability, using visual keys for a easy understanding for the user.",
-            tools: [{
-                    name: "Photoshop",
-                    img: "../img/tools/photoshop.png"
-                },
-                {
-                    name: "Illustrator",
-                    img: "../img/tools/illustrator.png"
-                },
-                {
-                    name: "Adobe XD",
-                    img: "../img/tools/adobe_xd.png"
-                },
-                {
-                    name: "Figma",
-                    img: "../img/tools/figma.png"
-                }
-            ],
-            image: "../img/skills/pic/ui.png",
-            icon: "../img/skills/icon/ui.svg"
+        title: "UI Design",
+        description: "Capacity to design digital user interfaces that convey client values and maximize usability, using visual keys for a easy understanding for the user.",
+        tools: [{
+            name: "Photoshop",
+            img: "../img/tools/photoshop.png"
         },
         {
-            title: "UX Design",
-            description: "Knowledge to perform user and context research, focused on the bases of user-centered design, in order to devise and prototype meaningful experiences.",
-            tools: [{
-                    name: "Figma",
-                    img: "../img/tools/figma.png"
-                },
-                {
-                    name: "Invision",
-                    img: "../img/tools/invision.png"
-                },
-                {
-                    name: "Marvel",
-                    img: "../img/tools/marvel_app.png"
-                }
-            ],
-            image: "",
-            icon: "../img/skills/icon/ux.svg"
+            name: "Illustrator",
+            img: "../img/tools/illustrator.png"
         },
         {
-            title: "Concept Art",
-            description: "Experience using techniques such as sketching, illustration and 3d modeling and rendering, to conceptualize ideas for advertising, applications or animations",
-            tools: [{
-                    name: "Photoshop",
-                    img: "../img/tools/photoshop.png"
-                },
-                {
-                    name: "Cinema 4D",
-                    img: "../img/tools/c4d.png"
-                },
-                {
-                    name: "Adobe After Effects",
-                    img: "../img/tools/adobe_after.png"
-                }
-            ],
-            image: "",
-            icon: "../img/skills/icon/art.svg"
+            name: "Adobe XD",
+            img: "../img/tools/adobe_xd.png"
         },
         {
-            title: "Web Development",
-            description: "Familiarity in the use of functional programming for the development of web prototypes, through front-end and back-end design.",
-            tools: [{
-                    name: "HTML5",
-                    img: "../img/tools/html5.png"
-                },
-                {
-                    name: "CSS",
-                    img: "../img/tools/css.png"
-                },
-                {
-                    name: "Javascript",
-                    img: "../img/tools/js.png"
-                },
-                {
-                    name: "Angular",
-                    img: "../img/tools/angular.png"
-                },
-                {
-                    name: "React",
-                    img: "../img/tools/react.png"
-                }
-            ],
-            image: "",
-            icon: "../img/skills/icon/web.svg"
-        },
-        {
-            title: "App Development",
-            description: "Dexterity to design and program prototypes of mobile applications in native and hybrid language.",
-            tools: [{
-                    name: "Android",
-                    img: "../img/tools/android_studio.png"
-                },
-                {
-                    name: "React",
-                    img: "../img/tools/react.png"
-                },
-                {
-                    name: "Java",
-                    img: "../img/tools/java.png"
-                }
-            ],
-            image: "",
-            icon: "../img/skills/icon/app.svg"
-        },
-        {
-            title: "Game Development",
-            description: "Aptitude for the design and development of videogames, focused on the narrative, the art, the gameplay and the programming of it.",
-            tools: [{
-                    name: "Unity",
-                    img: "../img/tools/unity.png"
-                },
-                {
-                    name: "Java",
-                    img: "../img/tools/java.png"
-                },
-                {
-                    name: "Processing",
-                    img: "../img/tools/processing.png"
-                }
-            ],
-            image: "",
-            icon: "../img/skills/icon/game.svg"
+            name: "Figma",
+            img: "../img/tools/figma.png"
         }
+        ],
+        image: "../img/skills/pic/ui.png",
+        icon: "../img/skills/icon/ui.svg"
+    },
+    {
+        title: "UX Design",
+        description: "Knowledge to perform user and context research, focused on the bases of user-centered design, in order to devise and prototype meaningful experiences.",
+        tools: [{
+            name: "Figma",
+            img: "../img/tools/figma.png"
+        },
+        {
+            name: "Invision",
+            img: "../img/tools/invision.png"
+        },
+        {
+            name: "Marvel",
+            img: "../img/tools/marvel_app.png"
+        }
+        ],
+        image: "",
+        icon: "../img/skills/icon/ux.svg"
+    },
+    {
+        title: "Concept Art",
+        description: "Experience using techniques such as sketching, illustration and 3d modeling and rendering, to conceptualize ideas for advertising, applications or animations",
+        tools: [{
+            name: "Photoshop",
+            img: "../img/tools/photoshop.png"
+        },
+        {
+            name: "Cinema 4D",
+            img: "../img/tools/c4d.png"
+        },
+        {
+            name: "Adobe After Effects",
+            img: "../img/tools/adobe_after.png"
+        }
+        ],
+        image: "",
+        icon: "../img/skills/icon/art.svg"
+    },
+    {
+        title: "Web Development",
+        description: "Familiarity in the use of functional programming for the development of web prototypes, through front-end and back-end design.",
+        tools: [{
+            name: "HTML5",
+            img: "../img/tools/html5.png"
+        },
+        {
+            name: "CSS",
+            img: "../img/tools/css.png"
+        },
+        {
+            name: "Javascript",
+            img: "../img/tools/js.png"
+        },
+        {
+            name: "Angular",
+            img: "../img/tools/angular.png"
+        },
+        {
+            name: "React",
+            img: "../img/tools/react.png"
+        }
+        ],
+        image: "",
+        icon: "../img/skills/icon/web.svg"
+    },
+    {
+        title: "App Development",
+        description: "Dexterity to design and program prototypes of mobile applications in native and hybrid language.",
+        tools: [{
+            name: "Android",
+            img: "../img/tools/android_studio.png"
+        },
+        {
+            name: "React",
+            img: "../img/tools/react.png"
+        },
+        {
+            name: "Java",
+            img: "../img/tools/java.png"
+        }
+        ],
+        image: "",
+        icon: "../img/skills/icon/app.svg"
+    },
+    {
+        title: "Game Development",
+        description: "Aptitude for the design and development of videogames, focused on the narrative, the art, the gameplay and the programming of it.",
+        tools: [{
+            name: "Unity",
+            img: "../img/tools/unity.png"
+        },
+        {
+            name: "Java",
+            img: "../img/tools/java.png"
+        },
+        {
+            name: "Processing",
+            img: "../img/tools/processing.png"
+        }
+        ],
+        image: "",
+        icon: "../img/skills/icon/game.svg"
+    }
     ];
 
     capacitiesList = [{
-            title: "Creativity",
-            description: "Constant observation of the human nature with a playful mindset, to think about new ideas that can help my projects or workflow.",
-            tools: "",
-            icon: "../img/skills/icon/creative.svg"
-        },
-        {
-            title: "Problem-solving",
-            description: "Always trying to find the solution to different challenges or situations during the design and development process.",
-            tools: "",
-            icon: "../img/skills/icon/problem.svg"
-        },
-        {
-            title: "Decision-making",
-            description: "Fast selection of choices when a problem is around the corner, to get always the best outcome of the situation.",
-            tools: "",
-            icon: "../img/skills/icon/decision.svg"
-        },
-        {
-            title: "Teamwork",
-            description: "Ability to work in sync with a team to achieve a goal, using the individual qualities of each one for a better flow during the development of a project",
-            tools: "",
-            icon: "../img/skills/icon/team.svg"
-        },
-        {
-            title: "Detail-oriented",
-            description: "Strong sense of details and aesthethics to develop high quality products.",
-            tools: "",
-            icon: "../img/skills/icon/detail.svg"
-        },
-        {
-            title: "Communication",
-            description: "Effectiveness to communicate my ideas with the work team and reach agreements for the development of projects.",
-            tools: "",
-            icon: "../img/skills/icon/communication.svg"
-        }
+        title: "Creativity",
+        description: "Constant observation of the human nature with a playful mindset, to think about new ideas that can help my projects or workflow.",
+        tools: "",
+        icon: "../img/skills/icon/creative.svg"
+    },
+    {
+        title: "Problem-solving",
+        description: "Always trying to find the solution to different challenges or situations during the design and development process.",
+        tools: "",
+        icon: "../img/skills/icon/problem.svg"
+    },
+    {
+        title: "Decision-making",
+        description: "Fast selection of choices when a problem is around the corner, to get always the best outcome of the situation.",
+        tools: "",
+        icon: "../img/skills/icon/decision.svg"
+    },
+    {
+        title: "Teamwork",
+        description: "Ability to work in sync with a team to achieve a goal, using the individual qualities of each one for a better flow during the development of a project",
+        tools: "",
+        icon: "../img/skills/icon/team.svg"
+    },
+    {
+        title: "Detail-oriented",
+        description: "Strong sense of details and aesthethics to develop high quality products.",
+        tools: "",
+        icon: "../img/skills/icon/detail.svg"
+    },
+    {
+        title: "Communication",
+        description: "Effectiveness to communicate my ideas with the work team and reach agreements for the development of projects.",
+        tools: "",
+        icon: "../img/skills/icon/communication.svg"
+    }
     ];
 
     $scope.skills = skillsList;
@@ -412,6 +399,8 @@ app.controller('ProjectControl', function ($scope, $routeParams, $window) {
 app.run(function ($rootScope, $timeout, $window) {
 
     $rootScope.loaded = function () {
+        $('#menu').hide();
+        $('#preloader').hide();
         $('#k_awaken').attr("src", "./img/k_awake.svg");
         $('#loader-text').text("READY!");
         setTimeout(() => {
@@ -426,4 +415,38 @@ app.run(function ($rootScope, $timeout, $window) {
             $window.scrollTo(0, 0);
         }, 400);
     });
+
+    //Smooth Scrolling
+    // var lastPosition = 0;
+    // var scroll = window.requestAnimationFrame ||
+    //     window.webkitRequestAnimationFrame ||
+    //     window.mozRequestAnimationFrame ||
+    //     window.msRequestAnimationFrame ||
+    //     window.oRequestAnimationFrame ||
+    //     // IE Fallback, you can even fallback to onscroll
+    //     function (callback) {
+    //         window.setTimeout(callback, 1000 / 60)
+    //     };
+
+    // function loop() {
+
+    //     // Avoid calculations if not needed
+    //     if (lastPosition == window.pageYOffset) {
+    //         scroll(loop);
+    //         return false;
+    //     } else lastPosition = window.pageYOffset;
+
+    //     var transform = 'translate3d(0px, -' + lastPosition + 'px, 0px)';
+    //     var smoothScoll = $(".smooth")[0];
+
+    //     smoothScoll.style.webkitTransform = transform;
+    //     smoothScoll.style.mozTransform = transform;
+    //     smoothScoll.style.transform = transform;
+
+
+    //     scroll(loop)
+    // }
+
+    // // Call the loop for the first time
+    // loop();
 });
