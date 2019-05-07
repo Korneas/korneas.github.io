@@ -1653,7 +1653,7 @@ a:hover {
   font-size: 2.5em;
   font-weight: 900;
   color: #003cf0;
-  margin: 0;
+  margin: 0 50px 0 0;
   display: inline-block;
   -webkit-user-select: none;
      -moz-user-select: none;

@@ -159,7 +159,7 @@ app.controller('AboutController', function ($scope, $timeout) {
             img: "../img/tools/figma.png"
         }
         ],
-        image: "../img/skills/pic/ui.png",
+        image: "../img/skills/pic/uidesign.png",
         icon: "../img/skills/icon/ui.svg"
     },
     {
@@ -178,7 +178,7 @@ app.controller('AboutController', function ($scope, $timeout) {
             img: "../img/tools/marvel_app.png"
         }
         ],
-        image: "",
+        image: "../img/skills/pic/uxdesign.png",
         icon: "../img/skills/icon/ux.svg"
     },
     {
@@ -197,7 +197,7 @@ app.controller('AboutController', function ($scope, $timeout) {
             img: "../img/tools/adobe_after.png"
         }
         ],
-        image: "",
+        image: "./img/skills/pic/concept.png",
         icon: "../img/skills/icon/art.svg"
     },
     {
@@ -224,7 +224,7 @@ app.controller('AboutController', function ($scope, $timeout) {
             img: "../img/tools/react.png"
         }
         ],
-        image: "",
+        image: "../img/skills/pic/webdev.png",
         icon: "../img/skills/icon/web.svg"
     },
     {
@@ -243,7 +243,7 @@ app.controller('AboutController', function ($scope, $timeout) {
             img: "../img/tools/java.png"
         }
         ],
-        image: "",
+        image: "../img/skills/pic/appdev.png",
         icon: "../img/skills/icon/app.svg"
     },
     {
@@ -315,7 +315,7 @@ app.controller('AboutController', function ($scope, $timeout) {
     $scope.toogleSkills = function () {
         $scope.toogleController = !$scope.toogleController;
         if ($scope.toogleController) {
-            $scope.skillTitle = "Capacities";
+            $scope.skillTitle = "Talent";
             $scope.skills = capacitiesList;
             $scope.skillSelected = 0;
             $scope.changeItem = true;
@@ -355,17 +355,18 @@ app.controller('AboutController', function ($scope, $timeout) {
     };
 
     $scope.changeSkill = (index) => {
-        $scope.changeItem = true;
-        $timeout(function () {
-            $scope.changeItem = false;
-            $scope.skillName = $scope.skills[index].title;
-            $scope.skillDescription = $scope.skills[index].description;
-            $scope.skillImage = skillsList[index].image;
-            $scope.skillTools = skillsList[index].tools;
-        }, 200);
-        $scope.skillSelected = index;
+        if ($scope.skillSelected != index) {
+            $scope.changeItem = true;
+            $timeout(function () {
+                $scope.changeItem = false;
+                $scope.skillName = $scope.skills[index].title;
+                $scope.skillDescription = $scope.skills[index].description;
+                $scope.skillImage = $scope.skills[index].image;
+                $scope.skillTools = skillsList[index].tools;
+            }, 200);
+            $scope.skillSelected = index;
+        }
     };
-
 });
 
 app.controller('ContactController', function ($scope) {
