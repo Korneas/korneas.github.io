@@ -404,14 +404,14 @@ app.run(function ($rootScope, $timeout, $window) {
 
     $rootScope.loaded = function () {
         $('#menu').hide();
-        $('#preloader').hide();
-        $('#k_awaken').attr("src", "./img/k_awake.svg");
-        $('#loader-text').text("READY!");
+        // $('#preloader').hide();
         setTimeout(() => {
-            $('#preloader').fadeOut(1000, () => {
+            $('#k_awaken').attr("src", "./img/k_awake.svg");
+            $('#loader-text').text("READY!");
+            $('#preloader').fadeOut(1500, () => {
                 $('#preloader').hide();
             });
-        }, 500);
+        }, 1500);
     };
 
     $rootScope.$on('$routeChangeSuccess', function () {
