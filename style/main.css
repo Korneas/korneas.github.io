@@ -1385,6 +1385,18 @@ a:hover {
   padding-bottom: 100%;
 }
 
+.project_article div.image-half .borders {
+  border-radius: 12px;
+}
+
+.project_article div.image-banner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
 .project_article div.image-third {
   display: inline-block;
   position: relative;
@@ -1615,6 +1627,25 @@ a:hover {
   font-family: "Barlow", "sans-serif";
   font-size: 4em;
   font-weight: 700;
+}
+
+#contact a.button-download {
+  background: #232323;
+  color: #fff0dc;
+  font-size: 1em;
+  font-family: "Heebo";
+  padding: 10px;
+  border-radius: 30px;
+  font-weight: 500;
+  width: 220px;
+  text-align: center;
+  margin-top: 20px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+#contact a.button-download:hover {
+  background: #003cf0;
 }
 
 #skillContent {

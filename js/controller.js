@@ -277,6 +277,7 @@ app.controller('AboutController', function ($scope, $timeout) {
         title: "Problem-solving",
         description: "Always trying to find the solution to different challenges or situations during the design and development process.",
         tools: "",
+        image: "../img/skills/pic/problemsolving.png",
         icon: "../img/skills/icon/problem.svg"
     },
     {
@@ -289,6 +290,7 @@ app.controller('AboutController', function ($scope, $timeout) {
         title: "Teamwork",
         description: "Ability to work in sync with a team to achieve a goal, using the individual qualities of each one for a better flow during the development of a project",
         tools: "",
+        image: "../img/skills/pic/teamwork.png",
         icon: "../img/skills/icon/team.svg"
     },
     {
@@ -301,6 +303,7 @@ app.controller('AboutController', function ($scope, $timeout) {
         title: "Communication",
         description: "Effectiveness to communicate my ideas with the work team and reach agreements for the development of projects.",
         tools: "",
+        image: "../img/skills/pic/communication.png",
         icon: "../img/skills/icon/communication.svg"
     }
     ];
