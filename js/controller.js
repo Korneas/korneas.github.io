@@ -1,5 +1,78 @@
 //Developed by: Camilo Jose Montoya | @korneas
-var app = angular.module('korneasPortfolioApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('korneas', ['ngRoute', 'ngAnimate']);
+
+var imageList = [
+    //Banners
+    "../img/banners/lifekeeper_banner.jpg",
+    "../img/banners/hictio_banner.jpg",
+    "../img/banners/napole_banner.png",
+    "../img/banners/nightmares_banner.png",
+    //Skills
+    "../img/skills/pic/appdev.png",
+    "../img/skills/pic/communication.png",
+    "../img/skills/pic/concept.png",
+    "../img/skills/pic/gaming.png",
+    "../img/skills/pic/problemsolving.png",
+    "../img/skills/pic/teamwork.png",
+    "../img/skills/pic/uidesign.png",
+    "../img/skills/pic/uxdesign.png",
+    "../img/skills/pic/webdev.png",
+    //Lifekeeper
+    "../img/projects/lifekeeper/brand_interface.png",
+    "../img/projects/lifekeeper/context.png",
+    "../img/projects/lifekeeper/emergency.png",
+    "../img/projects/lifekeeper/font.png",
+    "../img/projects/lifekeeper/icon_emergency.png",
+    "../img/projects/lifekeeper/icon_learning.png",
+    "../img/projects/lifekeeper/icon_real.png",
+    "../img/projects/lifekeeper/icon_social.png",
+    "../img/projects/lifekeeper/identification.png",
+    "../img/projects/lifekeeper/illustrations.png",
+    "../img/projects/lifekeeper/interview.png",
+    "../img/projects/lifekeeper/iphone.png",
+    "../img/projects/lifekeeper/learn.png",
+    "../img/projects/lifekeeper/news.png",
+    "../img/projects/lifekeeper/palette.png",
+    "../img/projects/lifekeeper/practice.png",
+    "../img/projects/lifekeeper/start_composition.jpg",
+    "../img/projects/lifekeeper/userflow.png",
+    "../img/projects/lifekeeper/volunteer.png",
+    "../img/projects/lifekeeper/wireframes_1.png",
+    "../img/projects/lifekeeper/wireframes_2.png",
+    "../img/projects/lifekeeper/wireframes_3.png",
+    "../img/projects/lifekeeper/wireframes_4.png"
+];
+
+var loaded = false;
+var toggled = false;
+function fadeOut(el) {
+    var fadeTarget = el;
+    var fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+
+        if (fadeTarget.style.opacity > 0) {
+            fadeTarget.style.opacity -= .05;
+        } else {
+            clearInterval(fadeEffect);
+            fadeTarget.style.display = 'none';
+        }
+    }, 50);
+}
+
+function fadeIn(el) {
+    var fadeTarget = el;
+    var fadeEffect = setInterval(function () {
+        fadeTarget.style.display = 'block';
+
+        if (fadeTarget.style.opacity < 1) {
+            fadeTarget.style.opacity = 1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 50);
+}
 
 var projects = [{
     name: "Lifekeeper",
@@ -96,7 +169,7 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('HomeController', function ($scope) {
-    //Empty
+
 });
 
 app.controller('ProjectsController', function ($scope) {
@@ -376,7 +449,7 @@ app.controller('ContactController', function ($scope) {
     $scope.k_msg = "Contacto";
 });
 
-app.controller('ProjectControl', function ($scope, $routeParams, $window) {
+app.controller('ProjectControl', function ($scope, $routeParams, $window, $interval) {
     var id = $routeParams.projectid;
 
     var inproject = projects.find((project) => {
@@ -385,11 +458,16 @@ app.controller('ProjectControl', function ($scope, $routeParams, $window) {
 
     $scope.project = inproject;
 
-    setInterval(() => {
+
+    var scrollListenerAnim = $interval(() => {
         if ($window.scrollY >= 400) {
-            $('.scrolldown').fadeOut();
+            if (document.getElementsByClassName("scrolldown")) {
+                fadeOut(document.getElementsByClassName("scrolldown")[0]);
+            }
         } else {
-            $('.scrolldown').fadeIn();
+            if (document.getElementsByClassName("scrolldown")) {
+                fadeIn(document.getElementsByClassName("scrolldown")[0]);
+            }
         }
     }, 200);
 
@@ -398,20 +476,99 @@ app.controller('ProjectControl', function ($scope, $routeParams, $window) {
     } else {
         $scope.personal = false;
     }
+
+    $scope.$on('$destroy', () => {
+        $interval.cancel(scrollListenerAnim);
+    });
 });
 
-app.run(function ($rootScope, $timeout, $window) {
+app.run(function ($rootScope, $timeout, $window, preloader) {
 
     $rootScope.loaded = function () {
-        $('#menu').hide();
-        // $('#preloader').hide();
-        setTimeout(() => {
-            $('#k_awaken').attr("src", "./img/k_awake.svg");
-            $('#loader-text').text("READY!");
-            $('#preloader').fadeOut(1500, () => {
-                $('#preloader').hide();
+        if (!loaded) {
+            preloader.preloadImages(imageList)
+                .then(function () {
+                    console.log("Loading fine");
+                    //Loading successful
+                    document.getElementById("menu").style.display = 'none';
+                    // document.getElementById("preloader").style.display = 'none';
+                    setTimeout(() => {
+                        document.getElementById("k_awaken").setAttribute('src', './img/k_awake.svg')
+                        document.getElementById("loader-text").textContent = "READY!";
+                        fadeOut(document.getElementById("preloader"));
+                    }, 1500);
+                },
+                    function () {
+                        console.log("Loading OMGADONOBAOBasddsasd....off");
+                        //Loading failed
+                    });
+
+            function toggleMenu() {
+                if (!toogled) {
+                    document.getElementsByClassName("menuicon").classList.add("on");
+                    document.getElementsByClassName("fillBlue").classList.add("on");
+                    document.getElementsByClassName("fillBlack").classList.add("on");
+                    document.getElementsById("fillBlack").classList.add("on");
+                    document.getElementById("mail").classList.add("on");
+                    document.getElementById("social").classList.add("on");
+                    document.getElementById("menu").style.display = ' ';
+                    document.getElementById("menu").classList.remove("hidden");
+                    toggled = true;
+                } else {
+                    document.getElementsByClassName("menuicon").classList.remove("on");
+                    document.getElementsByClassName("fillBlue").classList.remove("on");
+                    document.getElementsByClassName("fillBlack").classList.remove("on");
+                    document.getElementsById("fillBlack").classList.adremoved("on");
+                    document.getElementById("mail").classList.remove("on");
+                    document.getElementById("social").classList.remove("on");
+                    document.getElementById("menu").classList.add("hidden");
+                    toggled = false;
+                }
+
+                setTimeout(() => {
+                    if (document.getElementById("menu").classList.contains("hidden")) {
+                        document.getElementById("menu").style.direction = 'none';
+                    }
+                }, 200);
+            }
+
+            function calculateRes() {
+                return window.innerWidth < 800;
+            }
+
+            // Open menu
+            document.getElementById("menu_block").addEventListener('click', () => {
+                toggleMenu();
             });
-        }, 1500);
+
+            // Logo working as home
+            document.getElementById("logo").addEventListener('click', () => {
+                for (let index = 0; index < document.getElementsByClassName("menulink").length; index++) {
+                    document.getElementsByClassName("menulink")[index].classList.remove("menu_selected");
+                }
+                window.location = "#";
+                if (document.getElementById("mail").classList.contains("on")) {
+                    toggleMenu();
+                }
+            });
+
+            // Menu links actions
+            function menuLink(e) {
+                for (let index = 0; index < document.getElementsByClassName("menulink").length; index++) {
+                    document.getElementsByClassName("menulink")[index].classList.remove("menu_selected");
+                }
+                this.classList.add("menu_selected");
+                if (calculateRes()) {
+                    toggleMenu();
+                }
+            }
+
+            for (let index = 0; index < document.getElementsByClassName("menulink").length; index++) {
+                document.getElementsByClassName("menulink")[index].addEventListener('click', menuLink);
+            }
+
+            loaded = true;
+        }
     };
 
     $rootScope.$on('$routeChangeSuccess', function () {
