@@ -16,31 +16,31 @@ var imageList = [
     "../img/skills/pic/teamwork.png",
     "../img/skills/pic/uidesign.png",
     "../img/skills/pic/uxdesign.png",
-    "../img/skills/pic/webdev.png",
+    "../img/skills/pic/webdev.png"
     //Lifekeeper
-    "../img/projects/lifekeeper/brand_interface.png",
-    "../img/projects/lifekeeper/context.png",
-    "../img/projects/lifekeeper/emergency.png",
-    "../img/projects/lifekeeper/font.png",
-    "../img/projects/lifekeeper/icon_emergency.png",
-    "../img/projects/lifekeeper/icon_learning.png",
-    "../img/projects/lifekeeper/icon_real.png",
-    "../img/projects/lifekeeper/icon_social.png",
-    "../img/projects/lifekeeper/identification.png",
-    "../img/projects/lifekeeper/illustrations.png",
-    "../img/projects/lifekeeper/interview.png",
-    "../img/projects/lifekeeper/iphone.png",
-    "../img/projects/lifekeeper/learn.png",
-    "../img/projects/lifekeeper/news.png",
-    "../img/projects/lifekeeper/palette.png",
-    "../img/projects/lifekeeper/practice.png",
-    "../img/projects/lifekeeper/start_composition.jpg",
-    "../img/projects/lifekeeper/userflow.png",
-    "../img/projects/lifekeeper/volunteer.png",
-    "../img/projects/lifekeeper/wireframes_1.png",
-    "../img/projects/lifekeeper/wireframes_2.png",
-    "../img/projects/lifekeeper/wireframes_3.png",
-    "../img/projects/lifekeeper/wireframes_4.png"
+    // "../img/projects/lifekeeper/brand_interface.png",
+    // "../img/projects/lifekeeper/context.png",
+    // "../img/projects/lifekeeper/emergency.png",
+    // "../img/projects/lifekeeper/font.png",
+    // "../img/projects/lifekeeper/icon_emergency.png",
+    // "../img/projects/lifekeeper/icon_learning.png",
+    // "../img/projects/lifekeeper/icon_real.png",
+    // "../img/projects/lifekeeper/icon_social.png",
+    // "../img/projects/lifekeeper/identification.png",
+    // "../img/projects/lifekeeper/illustrations.png",
+    // "../img/projects/lifekeeper/interview.png",
+    // "../img/projects/lifekeeper/iphone.png",
+    // "../img/projects/lifekeeper/learn.png",
+    // "../img/projects/lifekeeper/news.png",
+    // "../img/projects/lifekeeper/palette.png",
+    // "../img/projects/lifekeeper/practice.png",
+    // "../img/projects/lifekeeper/start_composition.jpg",
+    // "../img/projects/lifekeeper/userflow.png",
+    // "../img/projects/lifekeeper/volunteer.png",
+    // "../img/projects/lifekeeper/wireframes_1.png",
+    // "../img/projects/lifekeeper/wireframes_2.png",
+    // "../img/projects/lifekeeper/wireframes_3.png",
+    // "../img/projects/lifekeeper/wireframes_4.png"
 ];
 
 var loaded = false;
@@ -74,7 +74,8 @@ function fadeIn(el) {
     }, 50);
 }
 
-var projects = [{
+var projects = [
+    {
     name: "Lifekeeper",
     id: "lifekeeper",
     date: "2019",
