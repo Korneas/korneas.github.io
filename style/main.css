@@ -164,7 +164,7 @@ body::-webkit-scrollbar {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  opacity: 1;
+  opacity: .5;
   -webkit-mask-image: url("../img/home/loading.svg");
           mask-image: url("../img/home/loading.svg");
   background-color: #fff0dc;

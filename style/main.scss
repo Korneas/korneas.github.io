@@ -197,7 +197,7 @@ body::-webkit-scrollbar {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        opacity: 1;
+        opacity: .5;
         @include urlSVG("../img/home/loading.svg");
         background-color: $beige;
         animation: infinite-rotation linear infinite 30s;
