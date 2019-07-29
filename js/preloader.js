@@ -12,6 +12,7 @@ angular
                     this.imageCount = this.imageLocations.length;
                     this.loadCount = 0;
                     this.errorCount = 0;
+                    this.loadPercentage = 0;
                     // I am the possible states that the preloader can be in.
                     this.states = {
                         PENDING: 1,

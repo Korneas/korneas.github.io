@@ -1,4 +1,5 @@
 <div class="project_preview slide">
+    <div class="project_spot" ng-style="{ 'background-image' : 'url({{project.bgp}})'}"></div>
     <p>{{project.date}}</p>
     <h1>{{project.name}}</h1>
     <div class="scrolldown">
@@ -7,13 +8,13 @@
 </div>
 <div class="project_overview">
     <h3 class="project_title">{{project.title}}</h3>
-    <div class="project_role">
+    <div class="project_summary">
+        <p class="subtitle">SUMMARY</p>
+        <p>{{project.overview}}</p>
+    </div>
+    <div class="project_role" ng-class="{ 'individual' : personal}">
         <p class="subtitle">ROLE</p>
         <p>{{project.role}}</p>
-    </div>
-    <div class="project_summary">
-            <p class="subtitle">SUMMARY</p>
-            <p>{{project.overview}}</p>
     </div>
     <div class="project_team" ng-class="{ 'individual' : personal}">
         <p class="subtitle">TEAM</p>
@@ -21,3 +22,21 @@
     </div>
 </div>
 <div ng-include="project.url"></div>
+<h2 class="project_thanks">Thanks for scrolling!</h2>
+<div class="next_project">
+    <h3>Next project</h3>
+    <div class="projects_link">
+        <a ng-href="{{projectsLink}}">View all projects</a>
+    </div>
+    <div class="project_slide" ng-style="{ 'background-image' : 'url({{nextProject.bgl}})'}">
+        <a ng-href="#/projects/{{nextProject.id}}"></a>
+        <img class="project_logo" ng-src="{{nextProject.logo}}" alt="Lifekeeper logo">
+        <div class="project_icon" ng-class="projectTag(nextProject.tag)"></div>
+        <img ng-src="{{nextProject.img}}" alt="Project result" class="project_img">
+        <div class="project_pointer">
+            <div></div>
+        </div>
+        <p ng-class="projectDescription(nextProject.color)">{{nextProject.description}}</p>
+        <p ng-class="projectHashtag(nextProject.color)">{{nextProject.hashtag}}</p>
+    </div>
+</div>

@@ -1,46 +1,72 @@
-<div class="content">
-    <div class="slide">
-        <h1 id="title_about" class="titles">About</h1>
-        <div class="grid">
-            <p class="description">
-                {{description_1}}
-                <br>
-                <br>
-                {{description_2}}
-            </p>
-            <p class="description">
-                {{description_3}}
-                <br>
-                <br>
-                {{description_4}}
-            </p>
-        </div>
-        <div id="photo_about"></div>
+<div id="about_overview">
+    <h1 id="about_title" class="titles">About <span>me</span></h1>
+    <h2 id="about_subtitle">— bio, skills & research</h2>
+    <div id="about_profile"></div>
+    <div id="about_description">
+        <h3 class="header">BIO</h3>
+        <p class="description">
+            I’m Camilo Montoya (@Korneas), a 21 years-old Colombian-based Interaction Design student in ICESI
+            University. I design digital solutions based on the context and the experience of the user, getting high
+            quality prototypes and results in the process.
+            <br>
+            <br>
+            Impulsed by my interest on digital content and the human feelings, I try to explore new things daily to
+            apply them in unique experiences and visuals.
+        </p>
     </div>
-    <div class="marker"></div>
-    <div class="slide">
-        <div id="skillContent">
-            <div id="skills">
-                <h3 ng-click="toogleSkills()">{{skillTitle}}</h3>
-                <!-- <img src="../img/skills/icon/switch.svg" alt="Toogle Skill" id="toogle_skill" ng-click="toogleSkills()"> -->
-                <div id="skill_grid">
-                    <div class="skill_icon" ng-repeat="skill in skills track by $index">
-                        <img ng-src="{{skill.icon}}" alt="Skill Icon"
-                            ng-style="changeSelected($index)"
-                            ng-mouseover="changeSkill($index)">
-                    </div>
+    <div id="about_detail" class="slide">
+        <div id="about_skills">
+            <h3 id="about_skills_switch" class="header on" ng-click="switchSkills(0)">SKILLS</h3>
+            <h3 id="about_talent_switch" class="header" ng-click="switchSkills(1)">TALENT</h3>
+            <div class="about_grid">
+                <div class="skill_icon" ng-repeat="skill in skills track by $index">
+                    <img ng-src="{{skill.icon}}" alt="Skill Icon" ng-style="changeSelected($index, toggleSkill)"
+                        ng-mouseover="changeSkill($index, toggleSkill)">
                 </div>
             </div>
-            <div id="skills_img" ng-class="{ 'change' : changeItem}">
-                <img src="{{skillImage}}" alt="">
+        </div>
+
+        <div id="about_focused" ng-class="{ 'change' : changeItem}">
+            <div id="about_focused_img" ng-style="{'background-image': 'url(' + skillImage + ')'}">
             </div>
-            <div id="skills_description" ng-class="{ 'change' : changeItem}">
+            <div id="about_focused_description">
                 <h2 class="subtitle">{{skillName}}</h2>
                 <p class="description">{{skillDescription}}</p>
-                <div id="tools">
-                    <div class="tool" ng-repeat="tool in skillTools" ng-style="{'background-image': 'url({{skillTools[$index].img}})'}"></div>
+                <div id="about_focused_tools" ng-style="toolsType(skillTypeAfter)">
+                    <div class="tool" ng-repeat="tool in skillTools"
+                        ng-style="{'background-image': 'url({{skillTools[$index].img}})'}"></div>
                 </div>
+            </div>
+        </div>
+
+        <div id="about_talent">
+            <h3 class="header right">TALENT</h3>
+            <div class="about_grid">
+                <div class="skill_icon" ng-repeat="talent in talents track by $index">
+                    <img ng-src="{{talent.icon}}" alt="Skill Icon" ng-style="changeSelected($index, 1)"
+                        ng-mouseover="changeSkill($index, 1)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about_research" class="slide">
+        <div class="half">
+            <div id="research_img"></div>
+        </div>
+        <div class="half">
+            <h3 class="header">RESEARCH</h3>
+            <hr>
+            <div class="paper" ng-repeat="paper in papers track by $index">
+                <p>{{paper.year}}</p>
+                <a ng-href="{{paper.link}}" target="_blank" rel="noopener noreferrer">{{paper.name}}</a>
             </div>
         </div>
     </div>
 </div>
+<footer>
+    <hr>
+    <p>
+        © 2019 Camilo Montoya.</br>
+        All rights reserved.
+    </p>
+</footer>

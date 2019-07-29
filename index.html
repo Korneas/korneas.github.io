@@ -5,29 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Korneas | Product Designer</title>
+    <meta property="og:title" content="Korneas">
+    <meta property="og:description" content="Interaction Designer Portfolio">
+    <meta property="og:image" content="https://korneas.github.io/img/preview_link.png">
+    <meta property="og:url" content="https://korneas.github.io/">
+    <title>Korneas | Interaction Designer</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
     <link rel="icon" href="img/logo_k.png">
-    <script src="./style/svg-inject.min.js"></script>
-    <!-- <base href="/" /> -->
+    <base href="/" />
 </head>
 
 <body>
     <div id="preloader">
-        <h2 id="loader-text">LOADING</h2>
-        <div id="loader-shadow">
-            <svg width="180" height="40">
-                <ellipse cx="90" cy="20" rx="90" ry="20" alignment-baseline="middle" class="fillClearGray" />
-            </svg>
-        </div>
-        <div id="loader">
-            <img src="./img/k_rest.svg" alt="Korneas Loader" id="k_awaken">
+        <div id="preloader_left"></div>
+        <div id="preloader_right"></div>
+        <div id="preloader_loading"></div>
+        <div id="preloader_line">
+            <p id="preloader_percent">0%</p>
         </div>
     </div>
+    <div id="cursor" class="disabled"></div>
     <div id="main">
         <nav id="navigation">
-            <div id="logo">
+            <div id="logo" class="link">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54 45"
                     style="enable-background:new 0 0 54 45;" xml:space="preserve">
@@ -41,17 +42,18 @@
                 </svg>
             </div>
             <div id="menu_block">
-                <span class="menuicon"></span>
-                <span class="menuicon"></span>
-                <span class="menuicon"></span>
+                <div class="menuicon"></div>
+                <div class="menuicon"></div>
+                <div class="menuicon"></div>
             </div>
-            <div id="menu_list">
+            <div id="menu_list" ng-controller="MenuController">
                 <ul>
-                    <li class="menulink"><a href="#/projects">projects</a></li>
-                    <li class="menulink"><a href="#/about">about</a></li>
-                    <li class="menulink"><a href="#/contact">contact</a></li>
+                    <li class="menulink"><a ng-href="{{aboutLink}}">about</a></li>
+                    <li class="menulink"><a ng-href="{{projectsLink}}">projects</a></li>
+                    <li class="menulink"><a ng-href="{{contactLink}}">contact</a></li>
                 </ul>
             </div>
+            <div id="menu_fade"></div>
             <div id="social">
                 <a id="github" class="main_icon" target="_blank" rel="noopener noreferrer"
                     href="https://github.com/Korneas"></a>
@@ -63,19 +65,20 @@
                     href="https://www.instagram.com/korneas/"></a>
             </div>
             <div id="mail">
-                <a href="mailto:korneas@outlook.com?subject=Hi Camilo 👋">Drop a mail.</a>
+                <a href="mailto:korneas@outlook.com?subject=Hi Camilo 👋">
+                    <div id="mail_icon"></div>
+                </a>
             </div>
         </nav>
-        <div id="menu" class="hidden">
+        <div id="menu" class="hidden" ng-controller="MenuController">
             <div id="menu_options">
                 <ul>
-                    <li class="menulink"><a href="projects">PROJECTS</a></li>
-                    <li class="menulink"><a href="about">ABOUT</a></li>
-                    <li class="menulink"><a href="contact">CONTACT</a></li>
+                    <li class="menulink"><a ng-href="{{aboutLink}}">about</a></li>
+                    <li class="menulink"><a ng-href="{{projectsLink}}">projects</a></li>
+                    <li class="menulink"><a ng-href="{{contactLink}}">contact</a></li>
                 </ul>
             </div>
         </div>
-        <div class="smooth"></div>
         <div id="container" class="view" ng-view onload="loaded()"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>

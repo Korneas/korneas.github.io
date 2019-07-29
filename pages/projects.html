@@ -1,22 +1,31 @@
-<div id="project_nav">
-    <h1 class="titles">{{title}}</h1>
+<!-- <div id="project_nav">
     <ul id="project_tag_list">
-        <li ng-repeat="tag in tags track by $index" ng-click="filterProjects($index)">{{tag.name}}<sup>{{tag.num}}</sup>
+        <li ng-repeat="tag in tags track by $index" ng-click="filterProjects($index)">
+            <div class="flex">
+                <div class="tag_icon" ng-class="iconTag($index)"></div>
+                <p>{{tag}}</p>
+            </div>
         </li>
     </ul>
-</div>
-<div class="content">
-    <div id="project_list">
-        <div class="project" ng-repeat="project in projects track by $index"
-            ng-style="{ 'background-image' : 'url({{project.img}})'}">
-            <div class="overlay">
-                <a ng-href="#/projects/{{project.id}}"></a>
-                <p class="project_date">{{project.date}}</p>
-                <p class="project_tag">{{project.tag}}</p>
-                <h3 class="project_title">{{project.name}}</h3>
-                <p class="project_description">{{project.description}}</p>
-            </div>
+</div> -->
+<h1 id="projects_title">Projects</h1>
+<div id="project_list">
+    <div class="project_slide half" ng-repeat="project in projects track by $index"
+        ng-style="{ 'background-image' : 'url({{project.bgs}})'}">
+        <a ng-href="#/projects/{{project.id}}"></a>
+        <img class="project_logo" ng-src="{{project.logo}}" alt="Project logo">
+        <div class="project_icon" ng-class="projectTag(project.tag)"></div>
+        <img ng-src="{{project.img}}" alt="Project result" class="project_img">
+        <div class="project_pointer">
+            <div></div>
         </div>
-        <div class="space"></div>
+        <p ng-class="projectHashtag(project.color)">{{project.hashtag}}</p>
     </div>
 </div>
+<footer>
+    <hr>
+    <p>
+        © 2019 Camilo Montoya.</br>
+        All rights reserved.
+    </p>
+</footer>

@@ -1,17 +1,106 @@
-<div class="content">
+<div id="home">
+    <div class="landing" id="landing-5"></div>
+    <div class="landing" id="landing-4"></div>
+    <div class="landing" id="landing-3"></div>
+    <div class="landing" id="landing-2"></div>
+    <div class="landing" id="landing-1"></div>
+    <div class="landing" id="landing-0"></div>
+    <div id="hiding"></div>
+</div>
+<div class="slide">
     <div id="init">
-        <div id="illustration">
-            <img src="../img/landing/k_miniballs.png" alt="Magic mini balls" id="k_mini_balls" width="1442" height="774">
-            <img src="../img/landing/k_maclaptop.png" alt="Mac Laptop" id="k_computer" width="466" height="418">
-            <img src="../img/landing/k_htccontroller.png" alt="HTC Vive Controller" id="k_vivecontroller" width="232" height="195">
-            <img src="../img/landing/k_htcvive.png" alt="HTC Vive Headset" id="k_vive" width="408" height="350">
-            <img src="../img/landing/k_wizard.png" alt="Korneas as Wizard" id="k_wizard" width="350" height="679">
-            <img src="../img/landing/k_grimoire.png" alt="Korneas' grimoire" id="k_grimoire" width="190" height="152">
-            <img src="../img/landing/k_bigballs.png" alt="Magic big balls" id="k_big_balls" width="1555" height="905">
-            <img src="../img/landing/k_iphonex.png" alt="iPhone X" id="k_iphone" width="441" height="463">
-        </div>
-        <h2 class="subtitle">I'm Camilo Montoya, a <span>product designer</span><br>
-            based in Colombia, that design interfaces<br>
-            and human experiences.</h2>
+        <h2 class="subtitle">I create interfaces, art and human <span>experiences</span></h2>
     </div>
 </div>
+<div id="init_projects" class="slide large">
+    <h3>Latest projects</h3>
+    <div class="project_slide" ng-style="{ 'background-image' : 'url({{lastProjects[0].bgl}})'}">
+        <a ng-href="#/projects/{{lastProjects[0].id}}"></a>
+        <img class="project_logo" ng-src="{{lastProjects[0].logo}}" alt="Lifekeeper logo">
+        <div class="project_icon" ng-class="projectTag(lastProjects[0].tag)"></div>
+        <img ng-src="{{lastProjects[0].img}}" alt="Project result" class="project_img">
+        <div class="project_pointer">
+            <div></div>
+        </div>
+        <p ng-class="projectDescription(lastProjects[0].color)">{{lastProjects[0].description}}</p>
+        <p ng-class="projectHashtag(lastProjects[0].color)">{{lastProjects[0].hashtag}}</p>
+    </div>
+    <div class="project_slide half" ng-style="{ 'background-image' : 'url({{lastProjects[1].bgs}})'}">
+        <a ng-href="#/projects/{{lastProjects[1].id}}"></a>
+        <img class="project_logo" ng-src="{{lastProjects[1].logo}}" alt="Hictio logo">
+        <div class="project_icon" ng-class="projectTag(lastProjects[1].tag)"></div>
+        <img ng-src="{{lastProjects[1].img}}" alt="Project result" class="project_img">
+        <div class="project_pointer">
+            <div></div>
+        </div>
+        <p ng-class="projectHashtag(lastProjects[1].color)">{{lastProjects[1].hashtag}}</p>
+    </div>
+    <div class="project_slide half" ng-style="{ 'background-image' : 'url({{lastProjects[2].bgs}})'}">
+        <a ng-href="#/projects/{{lastProjects[2].id}}"></a>
+        <img class="project_logo" ng-src="{{lastProjects[2].logo}}" alt="Nightmares logo">
+        <div class="project_icon" ng-class="projectTag(lastProjects[2].tag)"></div>
+        <img ng-src="{{lastProjects[2].img}}" alt="Project result" class="project_img">
+        <div class="project_pointer">
+            <div></div>
+        </div>
+        <p ng-class="projectHashtag(lastProjects[2].color)">{{lastProjects[2].hashtag}}</p>
+    </div>
+    <a id="allProjects" ng-href="{{projectsLink}}">View all projects</a>
+</div>
+<div id="init_skills">
+    <div id="init_skills_illustration">
+        <img src="/img/whatido.png" alt="Korneas as a experience designer">
+    </div>
+    <div id="init_skills_info">
+        <h2>
+            Tech needs more<br>
+            human <span>interaction</span>.
+        </h2>
+        <h3>What I do</h3>
+        <div class="init_skills_item">
+            <div class="init_skills_icon">
+                <img src="/img/icons/home/research.svg" alt="Research icon">
+            </div>
+            <p>Product Research</p>
+        </div>
+        <div class="init_skills_item">
+            <div class="init_skills_icon">
+                <img src="/img/icons/home/interface.svg" alt="Research icon">
+            </div>
+            <p>User Experience & Interface Design</p>
+        </div>
+        <div class="init_skills_item">
+            <div class="init_skills_icon">
+                <img src="/img/icons/home/prototype.svg" alt="Research icon">
+            </div>
+            <p>Prototyping</p>
+        </div>
+        <div class="init_skills_item">
+            <div class="init_skills_icon">
+                <img src="/img/icons/home/development.svg" alt="Research icon">
+            </div>
+            <p>Web & App Development</p>
+        </div>
+    </div>
+</div>
+<div id="init_contact" class="slide">
+    <div id="init_contact_info">
+        <div>
+            <p>Too much talking about me, let’s talk about us.<br>
+                Connect with me by email to start an awesome project:</p>
+            <a href="mailto:korneas.me@gmail.com?subject=Hi Camilo 👋" class="subtitle">korneas.me@gmail.com</a>
+            <a href="https://res.cloudinary.com/korneas/image/upload/v1557336609/CamiloMontoya-CV.pdf"
+                download="Camilo Montoya CV" target="_blank" class="button-download">Download CV (English)</a>
+        </div>
+    </div>
+    <div id="init_contact_illustration">
+        <img src="/img/contact.png" alt="Contact illustration">
+    </div>
+</div>
+<footer>
+    <hr>
+    <p>
+        © 2019 Camilo Montoya.</br>
+        All rights reserved.
+    </p>
+</footer>
