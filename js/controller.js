@@ -924,6 +924,7 @@ app.run(function ($rootScope, $timeout, $window, $interval, preloader) {
                     document.getElementsByClassName("menulink")[index].classList.remove("menu_selected");
                 }
                 window.location = homeLink;
+                document.getElementById("preloader").style.display = "none";
                 if (document.getElementById("mail").classList.contains("on")) {
                     toggleMenu();
                 }
