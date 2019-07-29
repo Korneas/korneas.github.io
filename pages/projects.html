@@ -12,7 +12,7 @@
 <div id="project_list">
     <div class="project_slide half" ng-repeat="project in projects track by $index"
         ng-style="{ 'background-image' : 'url({{project.bgs}})'}">
-        <a ng-href="#/projects/{{project.id}}"></a>
+        <a ng-href="/projects/{{project.id}}"></a>
         <img class="project_logo" ng-src="{{project.logo}}" alt="Project logo">
         <div class="project_icon" ng-class="projectTag(project.tag)"></div>
         <img ng-src="{{project.img}}" alt="Project result" class="project_img">
