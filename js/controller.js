@@ -200,10 +200,10 @@ function fadeIn(el) {
     }, 50);
 }
 
-let homeLink = "/";
-let aboutLink = "/about";
-let projectsLink = "/projects";
-let contactLink = "/contact";
+let homeLink = "#/";
+let aboutLink = "#/about";
+let projectsLink = "#/projects";
+let contactLink = "#/contact";
 
 var projects = [
     {
@@ -473,7 +473,7 @@ paperList = [
 
 app.config(['$locationProvider', function ($locationProvider) {
     $locationProvider.hashPrefix('');
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
 }]);
 
 app.config(function ($routeProvider) {

@@ -29,7 +29,7 @@
         <a ng-href="{{projectsLink}}">View all projects</a>
     </div>
     <div class="project_slide" ng-style="{ 'background-image' : 'url({{nextProject.bgl}})'}">
-        <a ng-href="/projects/{{nextProject.id}}"></a>
+        <a ng-href="#/projects/{{nextProject.id}}"></a>
         <img class="project_logo" ng-src="{{nextProject.logo}}" alt="Lifekeeper logo">
         <div class="project_icon" ng-class="projectTag(nextProject.tag)"></div>
         <img ng-src="{{nextProject.img}}" alt="Project result" class="project_img">
